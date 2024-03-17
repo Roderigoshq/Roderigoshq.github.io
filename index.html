@@ -10,26 +10,34 @@
 </head>
 <body>
     <header class="container-flex">
-        <div class="menu">
+        <div class="navbar">
             <div class="logo">
                 <a href="#"><img src="/images/ShiraLogoTipografia2-PNG-c2.png" width="120" alt="logo"></a>   
             </div>
-            <nav class="navbar">
+            <nav class="navlist">
                 <ul>
-                    <a href="#"><li>Página Inicial</li></a>
-                    <a href="#"><li>Sobre mim</li></a>
-                    <a href="#"><li>Portfolio</li></a>
-                    <a href="#"><li>Habilidades</li></a>
+                    <li class="nav-item">
+                        <a href="#">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Sobre mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Habilidades</a>
+                    </li>
                 </ul>
             </nav>
             <div class="preferences">
-                <img src="images/Sol.png" width="30" height="30" alt="sol">
+                <img src="images/Sol.png" width="25" height="25" alt="sol">
                 <button>portugues</button>
             </div>
         </div>
     </header>
-    <main>
-        <section>
+    <section class="home">
+        <main>
             <div class="title">
                 <h4 class="gradient">Front-End Developer & UX/UI Designer</h4>
                 <h1>Rodrigo Shiraishi</h1>
@@ -43,18 +51,121 @@
                     </a>
                 </div>
                 <div class="main-buttons">
-                    <a href="#">
-                        <button class="cv">Download CV</button>
-                    </a>
-                    <a href="#">
-                        <button  class="contato gradient">Contate-me</button>
-                    </a>
+                    <a href="#"><button class="big-button-gradient-bg cv">Download CV</button></a>
+                    <a href="#"><button class="big-button-principal contact">Contact me</button></a>
                 </div>
             </div>
             <div class="main-logo">
-                <img src="images/ShiraLogo - Home.png" alt="">
+                <img class="logo-3d" src="images/ShiraLogo - Home.png" alt="">
             </div>
-        </section>
-    </main>
+        </main>
+    </section>
+    <section class="container-flex about-me">
+        <div class="about-me-title">
+            <h2>about me</h2>
+            <img src="/images/4210456.png" width="50" height="50" alt="icone">
+        </div>
+        <div class="about-me-text">
+            <img src="/images/Rectangle 56.png" alt="photo">
+            <p>
+                Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br>
+                <br>
+                 Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. 
+                 <br>
+                 <br>
+                Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para <strong>aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong></p>
+        </div>
+    </section>
+    <section class="portfolio">
+        <script src="main.js"></script>
+        <div class="portfolio-header">
+            <div class="portfolio-title">
+                <h2 class="text1">a little bit of my</h2>
+                <h2 class="text2">Portfolio</h2>
+            </div>
+            <div class="filter">
+                <div class="dropdown">
+                    <div class="select">
+                        <span class="selected">All</span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="menu">
+                        <li class="active">All</li>
+                        <li>Portfolio</li>
+                        <li>Institutional Website</li>
+                        <li>Landing Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-cards">
+            <div class="cards first">
+                <img src="images/ProjectSemeador2 1.png" alt="foto">
+                <div class="card-header">
+                    <h1>Empty</h1>
+                    <h3>Description</h3>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="#">&#60; repository /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Application</button></a>
+                </div>
+            </div>
+            <div class="cards second">
+                <img src="images/ProjectSemeador2 1.png" alt="foto">
+                <div class="card-header">
+                    <h1>Empty</h1>
+                    <h3>Description</h3>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="#">&#60; repository /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Application</button></a>
+                </div>
+            </div>
+            <div class="cards third">
+                <img src="images/ProjectSemeador2 1.png" alt="foto">
+                <div class="card-header">
+                    <h1>Empty</h1>
+                    <h3>Description</h3>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="#">&#60; repository /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Application</button></a>
+                </div>
+            </div>
+            <div class="cards fourty">
+                <img src="images/ProjectSemeador2 1.png" alt="foto">
+                <div class="card-header">
+                    <h1>Empty</h1>
+                    <h3>Description</h3>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="#">&#60; repository /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Application</button></a>
+                </div>
+            </div>
+            <div class="cards fifty">
+                <img src="images/ProjectSemeador2 1.png" alt="foto">
+                <div class="card-header">
+                    <h1>Empty</h1>
+                    <h3>Description</h3>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="#">&#60; repository /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Application</button></a>
+                </div>
+            </div>
+            <div class="cards sixty">
+                <img src="images/ProjectSemeador2 1.png" alt="foto">
+                <div class="card-header">
+                    <h1>Empty</h1>
+                    <h3>Description</h3>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="#">&#60; repository /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Application</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
