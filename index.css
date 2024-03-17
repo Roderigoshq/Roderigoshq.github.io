@@ -93,7 +93,7 @@ section {
     color: var(--colorTexts);
     font-size: 15px;
     list-style-type: none;
-    font-weight: 300;
+    font-weight: 600;
     transition: 0.7s ease-in;
     position: relative;
     
