@@ -49,14 +49,14 @@ document.querySelector('.toggleButton').addEventListener('click', function() {
 });
 
 $(function() {
-    var portuguese = true;
+    var portuguese = false;
 
     $("button.portugues").click(function() {
         if (portuguese) {
             //cabeçalho
             $(".navlist ul li:nth-child(1) a").text("Página Inicial");
             $(".navlist ul li:nth-child(2) a").text("Sobre mim");
-            $(".navlist ul li:nth-child(3) a").text("Portfolio");
+            $(".navlist ul li:nth-child(3) a").text("Portfólio");
             $(".navlist ul li:nth-child(4) a").text("Habilidades");
             $("button.portugues").text("Português");
             //seção "home"
