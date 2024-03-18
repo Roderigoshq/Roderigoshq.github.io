@@ -6,7 +6,8 @@
     <title>Rodrigo Shira - Front-End Developer & UX/UI Designer</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header class="container-flex">
@@ -32,16 +33,16 @@
             </nav>
             <div class="preferences">
                 <img src="images/Sol.png" width="25" height="25" alt="sol">
-                <button>portugues</button>
+                <button class="portugues">portugues</button>
             </div>
         </div>
     </header>
     <section class="home">
         <main>
             <div class="title">
-                <h4 class="gradient">Front-End Developer & UX/UI Designer</h4>
+                <h4 class="gradient">Desenvolvedor Front-End e Designer de UX/UI</h4>
                 <h1>Rodrigo Shiraishi</h1>
-                <h5>I am a programming student focused on Web development and I intend to expand my knowledge in order to improve my skills</h5>
+                <h5>Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades</h5>
                 <div class="socialmedia">
                     <a href="">
                         <img src="/images/GitHubIcon2.png" width="20" alt="github">
@@ -52,7 +53,7 @@
                 </div>
                 <div class="main-buttons">
                     <a href="#"><button class="big-button-gradient-bg cv">Download CV</button></a>
-                    <a href="#"><button class="big-button-principal contact">Contact me</button></a>
+                    <a href="#"><button class="big-button-principal contact">Contate-me</button></a>
                 </div>
             </div>
             <div class="main-logo">
@@ -62,7 +63,7 @@
     </section>
     <section class="container-flex about-me">
         <div class="about-me-title">
-            <h2>about me</h2>
+            <h2>sobre mim</h2>
             <img src="/images/4210456.png" width="50" height="50" alt="icone">
         </div>
         <div class="about-me-text">
@@ -77,22 +78,21 @@
         </div>
     </section>
     <section class="portfolio">
-        <script src="main.js"></script>
         <div class="portfolio-header">
             <div class="portfolio-title">
-                <h2 class="text1">a little bit of my</h2>
-                <h2 class="text2">Portfolio</h2>
+                <h2 class="text1">Um pouco do meu</h2>
+                <h2 class="text2">Portfólio</h2>
             </div>
             <div class="filter">
                 <div class="dropdown">
                     <div class="select">
-                        <span class="selected">All</span>
+                        <span class="selected">Todos</span>
                         <div class="caret"></div>
                     </div>
                     <ul class="menu">
-                        <li class="active">All</li>
-                        <li>Portfolio</li>
-                        <li>Institutional Website</li>
+                        <li class="active">Todos</li>
+                        <li>Portfólio</li>
+                        <li>Website Institucional</li>
                         <li>Landing Page</li>
                     </ul>
                 </div>
@@ -106,8 +106,8 @@
                     <h3>Description</h3>
                 </div>
                 <div class="interactions">
-                    <a class="repository" href="#">&#60; repository /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Application</button></a>
+                    <a class="repository" href="#">&#60; repositório /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
             </div>
             <div class="cards second">
@@ -117,8 +117,8 @@
                     <h3>Description</h3>
                 </div>
                 <div class="interactions">
-                    <a class="repository" href="#">&#60; repository /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Application</button></a>
+                    <a class="repository" href="#">&#60; repositório /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
             </div>
             <div class="cards third">
@@ -128,8 +128,8 @@
                     <h3>Description</h3>
                 </div>
                 <div class="interactions">
-                    <a class="repository" href="#">&#60; repository /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Application</button></a>
+                    <a class="repository" href="#">&#60; repositório /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
             </div>
             <div class="cards fourty">
@@ -139,8 +139,8 @@
                     <h3>Description</h3>
                 </div>
                 <div class="interactions">
-                    <a class="repository" href="#">&#60; repository /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Application</button></a>
+                    <a class="repository" href="#">&#60; repositório /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
             </div>
             <div class="cards fifty">
@@ -150,8 +150,8 @@
                     <h3>Description</h3>
                 </div>
                 <div class="interactions">
-                    <a class="repository" href="#">&#60; repository /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Application</button></a>
+                    <a class="repository" href="#">&#60; repositório /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
             </div>
             <div class="cards sixty">
@@ -161,11 +161,72 @@
                     <h3>Description</h3>
                 </div>
                 <div class="interactions">
-                    <a class="repository" href="#">&#60; repository /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Application</button></a>
+                    <a class="repository" href="#">&#60; repositório /&#62;</a>
+                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
             </div>
         </div>
+    </section>
+    <section class="skills">
+        <div class="image-trade">
+            <button class="toggleButton">
+                <img class="logo-image" src="/images/Escuro.png" alt="Logo-image">
+            </button>
+        </div>
+        <div class="tools">
+            <h1>habilidades</h1>
+            <div class="tools-container">
+                <div class="tool">
+                    <img src="/images/HTML-logo 2.png" alt="logo-HTML" >
+                    <p>HTML5</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/CSS-logo-3 2.png" alt="logo-CSS" >
+                    <p>CSS</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/800px-Sass_Logo_Color 1.png" alt="logo-SASS" >
+                    <p>Sass</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/Bootstrap_logo-c 1.png" alt="logo-Bootstrap" >
+                    <p>Bootstrap</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/Javascript_badge-c 1.png" alt="logo-JavaScript" >
+                    <p>JavaScript</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/c.png" alt="logo-c" >
+                    <p>C</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/MySQL_textlogo 1.png" alt="logo-MySQL" >
+                    <p>MySQL</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/Git-Icon-1788C-c 1.png" alt="logo-Git" >
+                    <p>Git</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/Python-logo-notext 1.png" alt="logo-Python" >
+                    <p>Python</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/WordPress_blue_logo-c.png" alt="logo-Wordpress" >
+                    <p>Wordpress</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/1667px-Figma-logo-c.png" alt="logo-Figma" >
+                    <p>Figma</p>
+                </div>
+                <div class="tool">
+                    <img src="/images/Adobe_Photoshop_CC_icon-c.png" alt="logo-Photoshop" >
+                    <p>Photoshop</p>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
     </section>
 </body>
 </html>

@@ -14,10 +14,12 @@
     --colorActiveBottom: #36213d;
     --colorBackgroundButtons: #281B2C;
     --colorBackgroundButtonsHover: #513758;
-    --colorTexts: white;
+    --colorTexts: #ebebeb;
     --aboutmeColorText: #C5C5C5;
     --backgroundAboutme: #180E1B;
     --backgroundCards: #1D1320;
+    --backgroundTools: #1E1122;
+    --backgroundToolsHover: #362E39;
   }
 
 a{
@@ -27,6 +29,7 @@ a{
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .navbar {
+  position: fixed;
     height: 70px;
     width: 100%;
     display: flex;
@@ -43,6 +46,7 @@ header {
   background: var(--backgroundHeaderColor);
   position: fixed;
   width: 100%;
+  padding-inline: 30px;
   z-index: 1;
 }
 
@@ -59,7 +63,6 @@ section {
     display: flex;
     gap: 20px;
     align-items: center;
-    margin-right: 30px;
 }
 
 .preferences button {
@@ -84,20 +87,19 @@ section {
     display: flex;
     flex-direction: row;
     margin-top: 15px;
+    margin-left: 50px;
 }
 
 .navlist a {
-    margin-top: 20px;
-    margin-inline: 20px;
-    text-decoration: none;
-    color: var(--colorTexts);
-    font-size: 15px;
-    list-style-type: none;
-    font-weight: 600;
-    transition: 0.7s ease-in;
-    position: relative;
-    
-    
+  margin-top: 20px;
+  margin-inline: 20px;
+  text-decoration: none;
+  color: var(--colorTexts);
+  font-size: 15px;
+  list-style-type: none;
+  font-weight: 500;
+  transition: 0.7s ease-in;
+  position: relative;
 }
 
 .navlist a:before {
@@ -318,6 +320,13 @@ button.big-button-principal:active {
   padding-block: 100px;
 }
 
+.portfolio-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
 .text2{
   background: linear-gradient(to right, var(--colorTerciary), var(--colorSecondary));
   color: var(--backgroundHeaderColor);
@@ -399,452 +408,6 @@ transform: scale(1.01);
 }
 
 .repository{
-  text-decoration: none;
-  list-style-type: none;
-  transition: 0.7s ease-in;
-  position: relative;
-}
-
-.repository:before {
-  content: "";
-  background: linear-gradient( to right, var(--colorTerciary), var(--colorSecondary));;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 1px;
-  width: 0%;
-  transition: 0.3s ease-out;
-  
-}
-
-.repository:hover:before {
-  text-decoration: underline;
-  content: "";
-  background: linear-gradient( to right, var(--colorTerciary), var(--colorSecondary));;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 20px;
-  height: 1px;
-  width: 100%;
-}
-
-.repository:hover {
-  background: linear-gradient(to right, var(--colorTerciary), var(--colorSecondary));
-  color: var(--backgroundHeaderColor);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins';
-}
-
-:root {
-  --backgroundHeaderColor: #0f0911;
-  --backgroundColor: #120a14;
-  --colorPrimary: #26172B;
-  --colorSecondary: #B6325F;
-  --colorTerciary: #FF887C;
-  --colorActiveBottom: #36213d;
-  --colorBackgroundButtons: #281B2C;
-  --colorBackgroundButtonsHover: #513758;
-  --colorTexts: white;
-  --aboutmeColorText: #C5C5C5;
-  --backgroundAboutme: #180E1B;
-  --backgroundCards: #1D1320;
-}
-
-a{
-  text-decoration: none
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-.navbar {
-  height: 70px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background: var(--backgroundHeaderColor);
-  -webkit-box-shadow: 16px 17px 32px 0px var(--backgroundColor);
-  -moz-box-shadow: 16px 17px 32px 0px var(--backgroundColor);
-  box-shadow: 16px 17px 32px 0px var(--backgroundColor);
-}
-
-header {
-background: var(--backgroundHeaderColor);
-position: fixed;
-width: 100%;
-z-index: 1;
-}
-
-section {
-background-color: var(--backgroundColor);
-}
-
-.logo {
-  margin-right: 100px;
-
-}
-
-.preferences {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.preferences button {
-  background-color: var(--colorBackgroundButtons);
-  color: var(--colorTexts);
-  padding: 7px 13px;
-  border-radius: 3px;
-  border: var(--colorBackgroundButtons) solid 0px;
-  transition: 0.5s;
-  font-size: 13px;
-}
-
-.preferences button:hover {
-  background-color: var(--colorBackgroundButtonsHover);
-  color: var(--colorTexts);
-  padding: 7px 7px;
-  border-radius: 3px;
-  border: var(--colorBackgroundButtonsHover) solid 0px;
-}
-
-.navlist ul {
-  display: flex;
-  flex-direction: row;
-  margin-top: 15px;
-}
-
-.navlist a {
-  margin-top: 20px;
-  margin-inline: 20px;
-  text-decoration: none;
-  color: var(--colorTexts);
-  font-size: 15px;
-  list-style-type: none;
-  font-weight: 300;
-  transition: 0.7s ease-in;
-  position: relative;
-  
-  
-}
-
-.navlist a:before {
-  content: "";
-  background: linear-gradient( to right, var(--colorTerciary), var(--colorSecondary));;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 1px;
-  width: 0%;
-  transition: 0.3s ease-out;
-  
-}
-
-.navlist a:hover:before {
-  content: "";
-  background: linear-gradient( to right, var(--colorTerciary), var(--colorSecondary));;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 1px;
-  width: 100%;
-}
-
-.nav-item {
-list-style: none;
-align-items: center;
-}
-
-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.home{
-padding-top:120px 
-}
-
-.socialmedia{
-  display: flex;
-  gap: 10px;
-}
-
-.main-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-.title {
-  margin: 100px 50px;
-}
-
-.title h4{
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 0;
-}
-
-.title h1 {
-  font-size: 70px;
-  font-weight:600;
-  color: var(--colorTexts);
-}
-
-.title h5 {
-  font-size: 15px;
-  font-weight:400;
-  color: #dedede;
-  width: 500px;
-}
-
-.gradient {
-background: linear-gradient(to right, var(--colorTerciary), var(--colorSecondary));
-color: var(--backgroundHeaderColor);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-button {
-cursor: pointer;
-outline: none;
-border: 0;
-text-decoration: none;
-}
-
-button.big-button-gradient-bg{
-background: linear-gradient(to right, var(--colorTerciary), var(--colorSecondary));
-border-radius: 18px;
-color: var(--colorPrimary);
-font-weight:600;
-margin-top: 35px;
-transform-style: preserve-3d;
-transition: all 175ms cubic-bezier(0, 0, 1, 1);
-
-}
-
-button.big-button-gradient-bg::before {
-position: absolute;
-content: "";
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: var(--colorPrimary);
-border-radius: inherit;
-box-shadow: 0 var(--colorPrimary);
-transform: translate3d(0.2em, 0.2em, -1em);
-transition: all 175ms cubic-bezier(0, 0, 1, 1);
-}
-
-button.big-button-gradient-bg:hover {
-background: linear-gradient(to right, var(--colorTerciary), var(--colorSecondary));
-transform: translate(0em, 0.2em);
-}
-
-button.big-button-gradient-bg:hover::before {
-transform: translate3d(0, 0, -1em);
-}
-
-button.big-button-gradient-bg:active {
-background-color: var(--colorActiveBottom);
-}
-
-
-button.big-button-principal {
-border: 1px solid var(--colorPrimary);
-background: var(--colorPrimary);
-font-family: 'Poppins';
-font-weight: 600;
-color: var(--colorSecondary);
-border-radius: 18px;
-transform-style: preserve-3d;
-transition: all 175ms cubic-bezier(0, 0, 1, 1);
-}
-
-button.big-button-principal::before {
-position: absolute;
-content: "";
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: var(--colorSecondary);
-border-radius: inherit;
-box-shadow: 0 var(--colorSecondary);
-transform: translate3d(0.2em, 0.2em, -1em);
-transition: all 175ms cubic-bezier(0, 0, 1, 1);
-}
-
-button.big-button-principal:hover {
-background: var(--colorPrimary);
-transform: translate(0em, 0.2em);
-}
-
-button.big-button-principal:hover::before {
-transform: translate3d(0, 0, -1em);
-}
-
-button.big-button-principal:active {
-background-color: var(--colorActiveBottom);
-}
-
-.contact{
-margin-top: 35px;
-font-size: 1.0 rem;
-padding: 12px 40px;
-}
-
-.cv{
-font-size: 1.0 rem;
-padding: 12px 40px;
-}
-
-.about-me-title{
-display: flex;
-flex-direction: row;
-align-items: center;
-gap: 10px;
-}
-
-.about-me-title h2 {
-font-size: 53px;
-font-weight: 600;
-color: white;
-}
-
-
-.about-me-title, .about-me-text {
-width: 1128px;
-margin-inline: auto;
-}
-
-.about-me-text {
-gap: 50px;
-display: flex;
-flex-direction: row;
-color: var(--aboutmeColorText);
-background: var(--backgroundAboutme);
-padding: 60px 60px;
-border-radius: 21px;
-border: 1px solid #3F3F3F;
-}
-
-
-.about-me {
-padding-top: 200px;
-padding-bottom: 150px;
-}
-
-.portfolio {
-background: var(--backgroundAboutme);
-padding-block: 100px;
-}
-
-
-.portfolio-header{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-
-.text2{
-background: linear-gradient(to right, var(--colorTerciary), var(--colorSecondary));
-color: var(--backgroundHeaderColor);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-weight: 600;
-font-size: 122px;
-display: block;
-position: relative;
-bottom: 30px;
-}
-
-.text1{
-color: white;
-font-weight: 500;
-font-size: 44px;
-margin-bottom: 0px;
-}
-
-.portfolio-cards{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-gap:48px;
-justify-content: center;
-margin-inline: 30px;
-}
-
-.cards{
-color: white;
-width: 289px;
-border-end-start-radius: 18px;
-border-end-end-radius: 18px;
-background: var(--backgroundCards);
-transition: all 500ms ease-out;
-}
-
-.cards:hover{
--webkit-box-shadow: 16px 17px 32px 0px var(--backgroundColor);
--moz-box-shadow: 16px 17px 32px 0px var(--backgroundColor);
-box-shadow: 16px 17px 32px 0px var(--backgroundColor);
-transition: all 500ms ease-out;
-transform: scale(1.01);
-}
-
-.interactions {
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-margin-top: 50px;
-padding-bottom: 20px;
-align-items: center;
-}
-
-.interactions a{
-font-size: 12px;
-color: white;
-text-decoration: none;
-}
-
-.interactions button{
-padding: 5px 15px;
-border-radius: 3px;
-font-size: 10px;
-}
-
-.cards h1 {
-font-size: 20px;
-}
-
-.cards h3 {
-font-size: 9px;
-}
-
-.card-header {
-margin-top: 10px;
-margin-inline: 10px;
-}
-
-.repository{
 text-decoration: none;
 list-style-type: none;
 transition: 0.7s ease-in;
@@ -893,6 +456,7 @@ align-items: center;
 .dropdown * {
 box-sizing: border-box;
 width: 200px;
+z-index: 1;
 }
 
 .select {
@@ -944,7 +508,7 @@ transform: rotate(180deg);
   transform: translateX(-50%);
   opacity: 1;
   display: none;
-  z-index: 1;
+
   overflow: hidden;
 }
 
@@ -972,3 +536,70 @@ opacity: 1;
 z-index: 0.5;
 }
 
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logo-image {
+  width: 503px; 
+  height: auto; 
+}
+
+.skills{
+  display: flex;
+  flex-direction: row;
+  padding: 50px 120px 50px 120px ;
+  gap: 101px;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tools h1{
+  color: var(--colorTexts);
+  font-size: 87px;
+  font-weight: 600;
+  right: 387px;
+}
+
+.tools h1:after{
+  content: '.';
+  color: var(--colorSecondary);
+  font-weight: 600;
+}
+
+.tools-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 43px;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 135px;
+  height: 162px;
+  background-color: var(--backgroundTools);
+  border-radius: 19px;
+  border: 1px solid #4B414E;
+  font-weight:500;
+  font-size: 12px;
+  color: var(--colorTexts);
+  gap: 10px;
+  transition: background 0.4s;
+}
+
+.tool:hover {
+  background-color: var(--backgroundToolsHover);
+  transition: background 0.4s;
+}
