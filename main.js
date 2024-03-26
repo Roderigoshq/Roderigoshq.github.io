@@ -93,7 +93,7 @@ $(function() {
             $(".contact").text("Contact me");
             //seção "about-me"
             $(".about-me-title h2").text("About me");
-            $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá da Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Front-End developer</strong>.")
+            $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Front-End developer</strong>.")
             //seção "portfolio"
             $(".portfolio-header .portfolio-title .text1").text("A little bit of my");
             $(".portfolio-header .portfolio-title .text2").text("Portfolio");
@@ -109,5 +109,33 @@ $(function() {
 
             portuguese = true;
         }
+    });
+});
+
+document.querySelector('.dark-mode-button').addEventListener('click', function() {
+    var images = document.querySelectorAll('.dark-mode');
+    images.forEach(function(image) {
+        image.style.transition = 'opacity 0.2s ease-in-out';
+        image.style.opacity = '0.2';
+        const root = document.documentElement;
+        const cv = document.querySelector(".cv");
+        const PrincipalButton = document.querySelector(".big-button-principal");
+        setTimeout(function() {
+            if (image.src.match('/images/Lua.png')) {
+                image.src = '/images/Sol.png';
+                root.style.setProperty('--backgroundColor', '#f0f0f0');
+                root.style.setProperty('--colorTexts', '#180E1B');
+                root.style.setProperty('--colorSubtitle', '#494747');
+                root.style.setProperty('--colorSecondary', '#180E1B');
+                cv.style.setProperty('background', '#180E1B')
+                cv.style.setProperty('color', '#f0f0f0')
+            } else {
+                image.src = '/images/Lua.png';
+                root.style.setProperty('--backgroundColor', '#120a14');
+            }
+            setTimeout(function() {
+                image.style.opacity = '1';
+            }, 50);
+        }, 100);
     });
 });
