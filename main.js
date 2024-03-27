@@ -126,7 +126,6 @@ const alternativeStyles = {
     '--colorContact': '#160D18',
     '--colorPortugueseText': '#929292',
     '--colorActiveButtonContact' : '#B3B3B3',
-    '--colorActiveButtonCV' : '#f0f0f0',
     '--repositoryColorSecondary': '#160D18',
     '--repositoryColorTerciary': '#160D18',
     '--backgroundAboutme': '#E2E2E2',
@@ -134,7 +133,12 @@ const alternativeStyles = {
     '--aboutmeColorStroke': '#B3B3B3',
     '--PortfolioBoxShadow': '#d1d1d1de',
     '--PortfolioBackground': '#ECECEC',
-    '--NavbarShadow': '#E0E0E0'
+    '--NavbarShadow': '#E0E0E0',
+    '--colorTextCV' : '#f0f0f0',
+    '--colorGradientPrimary' : '#26172B',
+    '--colorGradientSecondary' : '#26172B',
+    '--colorGradientPrimaryActive' : '#52395c',
+    '--colorGradientSecondaryActive' : '#52395c'
 };
 
 const originalStyles = {
@@ -151,7 +155,6 @@ const originalStyles = {
     '--colorContact': '#B6325F',
     '--colorPortugueseText': '#ebebeb',
     '--colorActiveButtonContact' : '#36213d',
-    '--colorActiveButtonCV' : '#52395c',
     '--repositoryColorSecondary': '#B6325F',
     '--repositoryColorTerciary': '#FF887C',
     '--backgroundAboutme': '#180E1B',
@@ -159,7 +162,12 @@ const originalStyles = {
     '--aboutmeColorStroke': '#3F3F3F',
     '--PortfolioBoxShadow': '#160D19',
     '--PortfolioBackground': '#180E1B',
-    '--NavbarShadow': '#0c070e'
+    '--NavbarShadow': '#0c070e',
+    '--colorTextCV' : '#120a14',
+    '--colorGradientPrimary' : '#FF887C',
+    '--colorGradientSecondary' : '#B6325F',
+    '--colorGradientPrimaryActive' : '#ff9e95',
+    '--colorGradientSecondaryActive' : '#e24a7c'
 };
 
 function restoreAlternativeStyles() {
@@ -177,6 +185,7 @@ function restoreOriginalStyles() {
 }
 
 document.querySelector('.dark-mode-button').addEventListener('click', function() {
+    event.preventDefault();
     var images = document.querySelectorAll('.dark-mode');
     images.forEach(function(image) {
         image.style.transition = 'opacity 0.2s ease-in-out';
@@ -189,8 +198,6 @@ document.querySelector('.dark-mode-button').addEventListener('click', function()
             if (image.src.match('/images/Lua.png')) {
                 image.src = '/images/Sol2.png';
                 restoreAlternativeStyles();
-                cv.style.setProperty('background', '#180E1B');
-                cv.style.setProperty('color', '#f0f0f0');
 
                 lightIcons.forEach(function(icon) {
                     icon.style.display = 'none';
