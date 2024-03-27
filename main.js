@@ -191,7 +191,6 @@ document.querySelector('.dark-mode-button').addEventListener('click', function()
         image.style.transition = 'opacity 0.2s ease-in-out';
         image.style.opacity = '0.2';
         const root = document.documentElement;
-        const cv = document.querySelector(".cv");
         const lightIcons = document.querySelectorAll(".light-icons");
         const darkIcons = document.querySelectorAll(".dark-icons");
         setTimeout(function() {
