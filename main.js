@@ -112,6 +112,70 @@ $(function() {
     });
 });
 
+const alternativeStyles = {
+    '--backgroundColor': '#ECECEC',
+    '--backgroundHeaderColor': '#F6F6F6',
+    '--backgroundCards': '#DBDBDB',
+    '--backgroundTools': '#E7E7E7',
+    '--backgroundToolsHover': '#F3F3F3',
+    '--colorToolsStroke': '#CCCCCC',
+    '--colorBackgroundButtons': '#D8D8D8',
+    '--colorBackgroundButtonsHover': '#D0D0D0',
+    '--colorTexts': '#180E1B',
+    '--colorSubtitle': '#494747',
+    '--colorContact': '#160D18',
+    '--colorPortugueseText': '#929292',
+    '--colorActiveButtonContact' : '#B3B3B3',
+    '--colorActiveButtonCV' : '#f0f0f0',
+    '--repositoryColorSecondary': '#160D18',
+    '--repositoryColorTerciary': '#160D18',
+    '--backgroundAboutme': '#E2E2E2',
+    '--aboutmeColorText': '#E1122',
+    '--aboutmeColorStroke': '#B3B3B3',
+    '--PortfolioBoxShadow': '#d1d1d1de',
+    '--PortfolioBackground': '#ECECEC',
+    '--NavbarShadow': '#E0E0E0'
+};
+
+const originalStyles = {
+    '--backgroundColor': '#120a14',
+    '--backgroundHeaderColor': '#0f0911',
+    '--backgroundCards': '#1D1320',
+    '--backgroundTools': '#1E1122',
+    '--backgroundToolsHover': '#362E39',
+    '--colorToolsStroke': '#4B414E',
+    '--colorBackgroundButtons': '#281B2C',
+    '--colorBackgroundButtonsHover': '#513758',
+    '--colorTexts': '#ebebeb',
+    '--colorSubtitle': '#dedede',
+    '--colorContact': '#B6325F',
+    '--colorPortugueseText': '#ebebeb',
+    '--colorActiveButtonContact' : '#36213d',
+    '--colorActiveButtonCV' : '#52395c',
+    '--repositoryColorSecondary': '#B6325F',
+    '--repositoryColorTerciary': '#FF887C',
+    '--backgroundAboutme': '#180E1B',
+    '--aboutmeColorText': '#C5C5C5',
+    '--aboutmeColorStroke': '#3F3F3F',
+    '--PortfolioBoxShadow': '#160D19',
+    '--PortfolioBackground': '#180E1B',
+    '--NavbarShadow': '#0c070e'
+};
+
+function restoreAlternativeStyles() {
+    const root = document.documentElement;
+    for (const [property, value] of Object.entries(alternativeStyles)) {
+        root.style.setProperty(property, value);
+    }
+}
+
+function restoreOriginalStyles() {
+    const root = document.documentElement;
+    for (const [property, value] of Object.entries(originalStyles)) {
+        root.style.setProperty(property, value);
+    }
+}
+
 document.querySelector('.dark-mode-button').addEventListener('click', function() {
     var images = document.querySelectorAll('.dark-mode');
     images.forEach(function(image) {
@@ -119,19 +183,83 @@ document.querySelector('.dark-mode-button').addEventListener('click', function()
         image.style.opacity = '0.2';
         const root = document.documentElement;
         const cv = document.querySelector(".cv");
-        const PrincipalButton = document.querySelector(".big-button-principal");
+        const lightIcons = document.querySelectorAll(".light-icons");
+        const darkIcons = document.querySelectorAll(".dark-icons");
         setTimeout(function() {
             if (image.src.match('/images/Lua.png')) {
-                image.src = '/images/Sol.png';
-                root.style.setProperty('--backgroundColor', '#f0f0f0');
-                root.style.setProperty('--colorTexts', '#180E1B');
-                root.style.setProperty('--colorSubtitle', '#494747');
-                root.style.setProperty('--colorSecondary', '#180E1B');
-                cv.style.setProperty('background', '#180E1B')
-                cv.style.setProperty('color', '#f0f0f0')
+                image.src = '/images/Sol2.png';
+                restoreAlternativeStyles();
+                cv.style.setProperty('background', '#180E1B');
+                cv.style.setProperty('color', '#f0f0f0');
+
+                lightIcons.forEach(function(icon) {
+                    icon.style.display = 'none';
+                });
+                darkIcons.forEach(function(icon) {
+                    icon.style.display = 'block';
+                });
+
+                var darkImage = '/images/escuro(2).png';
+                var lightImage = '/images/claro(2).png';
+                var isDarkMode = true;
+
+                document.querySelector('.logo-image').src = darkImage;
+                document.querySelector('.toggleButton').addEventListener('click', function() {
+                    var images = document.querySelectorAll('.logo-image');
+                    images.forEach(function(image) {
+                        image.style.transition = 'opacity 0.2s ease-in-out';
+                        image.style.opacity = '0.2';
+
+                        setTimeout(function() {
+                            if (isDarkMode) {
+                                image.src = lightImage;
+                            } else {
+                                image.src = darkImage;
+                            }
+                            isDarkMode = !isDarkMode;
+                            setTimeout(function() {
+                                image.style.opacity = '1';
+                            }, 50);
+                        }, 200);
+                    });
+                });
+
+
             } else {
                 image.src = '/images/Lua.png';
-                root.style.setProperty('--backgroundColor', '#120a14');
+                restoreOriginalStyles();
+
+                lightIcons.forEach(function(icon) {
+                    icon.style.display = 'block';
+                });
+                darkIcons.forEach(function(icon) {
+                    icon.style.display = 'none';
+                });
+
+                var darkImage = '/images/Escuro.png';
+                var lightImage = '/images/Claro.png';
+                var isDarkMode = true;
+
+                document.querySelector('.logo-image').src = darkImage;
+                document.querySelector('.toggleButton').addEventListener('click', function() {
+                    var images = document.querySelectorAll('.logo-image');
+                    images.forEach(function(image) {
+                        image.style.transition = 'opacity 0.2s ease-in-out';
+                        image.style.opacity = '0.2';
+
+                        setTimeout(function() {
+                            if (isDarkMode) {
+                                image.src = lightImage;
+                            } else {
+                                image.src = darkImage;
+                            }
+                            isDarkMode = !isDarkMode;
+                            setTimeout(function() {
+                                image.style.opacity = '1';
+                            }, 50);
+                        }, 200);
+                    });
+                });
             }
             setTimeout(function() {
                 image.style.opacity = '1';
@@ -139,3 +267,17 @@ document.querySelector('.dark-mode-button').addEventListener('click', function()
         }, 100);
     });
 });
+
+
+var logo_dark = 'images/ShiraLogo - Home_Dark2.png';
+var logo_light = 'images/ShiraLogo - Home.png';
+function trocar(){
+    document.querySelector('.logo-3d').src = logo_dark;
+    let aux = logo_dark;
+    logo_dark = logo_light;
+    logo_light = aux;
+};
+
+
+
+
