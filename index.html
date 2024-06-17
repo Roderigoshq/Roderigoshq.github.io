@@ -14,21 +14,21 @@
     <header class="container-flex">
         <div class="navbar">
             <div class="logo">
-                <a href="#"><img src="/images/ShiraLogoTipografia2-PNG-c2.png" width="120" alt="logo"></a>   
+                <a href="#home"><img src="/images/ShiraLogoTipografia2-PNG-c2.png" width="120" alt="logo"></a>   
             </div>
             <nav class="navlist">
                 <ul>
                     <li class="nav-item">
-                        <a href="#">Página Inicial</a>
+                        <a href="#home">Página Inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Sobre mim</a>
+                        <a href="#about-me">Sobre mim</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Portfólio</a>
+                        <a href="#portfolio">Portfólio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Habilidades</a>
+                        <a href="#skills">Habilidades</a>
                     </li>
                 </ul>
             </nav>
@@ -44,23 +44,23 @@
             </div>
         </div>
     </header>
-    <section class="home">
+    <section class="home" id="home">
         <main>
             <div class="title">
                 <h4 class="gradient">Desenvolvedor Front-End e Designer de UX/UI</h4>
                 <h1>Rodrigo Shiraishi</h1>
                 <h5>Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades</h5>
                 <div class="socialmedia">
-                    <a href="">
+                    <a href="https://github.com/Roderigoshq">
                         <img src="/images/GitHubIcon2.png" width="20" alt="github">
                     </a>
-                    <a href="">
+                    <a href="https://www.linkedin.com/in/rodrigo-shiraishi-quadros-a35a6424b/">
                         <img src="/images/LinkedinIcon2.png" width="20" alt="linkedin">
                     </a>
                 </div>
                 <div class="main-buttons">
-                    <a href="#"><button class="big-button-cv cv">Download CV</button></a>
-                    <a href="#"><button class="big-button-principal contact-button">Contate-me</button></a>
+                    <a href="files/curriculo_rodrigo_shira.pdf" download=""><button id="downloadButton" class="big-button-cv cv">Download CV</button></a>
+                    <a href="#contact"><button class="big-button-principal contact-button">Contate-me</button></a>
                 </div>
             </div>
             <div class="main-logo">
@@ -68,7 +68,7 @@
             </div>
         </main>
     </section>
-    <section class="container-flex about-me">
+    <section class="container-flex about-me" id="about-me">
         <div class="about-me-title">
             <h2>sobre mim</h2>
             <img src="/images/4210456.png" width="50" height="50" alt="icone">
@@ -84,7 +84,7 @@
                 Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para <strong>aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong></p>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="portfolio-header">
             <div class="portfolio-title">
                 <h2 class="text1">Um pouco do meu</h2>
@@ -174,7 +174,7 @@
             </div>
         </div>
     </section>
-    <section class="skills">
+    <section class="skills" id="skills">
         <div class="image-trade">
             <button class="toggleButton">
                 <img class="logo-image" src="/images/Escuro.png" alt="Logo-image">
@@ -245,18 +245,39 @@
                 </div>
             </div>
         </div>
-        <script src="main.js"></script>
     </section>
-    <section class="contact">
-        <div></div>
-        <div class="form-contact">
-            <h1>Formulário de Contato</h1>
-            <h2>&#60 Preencha os dados abaixo e logo você será respondido ; &#41; /&#60</h2>
-            <div class="entryarea">
-                <input type="text" required>
-                <div class="labelline">name</div>
+    <section class="contact" id="contact">
+            <div class="announcement">
+                <img src="images/96351e29-ba09-4245-9606-ff8eb2a4d90b 1.png" alt="bate-papo-icon">
+                <h3 class="announcement-text">Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?</h3>
+                <h2 class="announcement-text-2">Entre em contato já!</h2> 
+                <img class="arrows" src="images/Group 1.png" alt="setas">
             </div>
-        </div>
+            <div class="form-contact">
+                <h1 class="form-title">
+                    <span>F o r m u l á r i o</span>
+                    <span>d e</span>
+                </h1>
+                <h1 class="form-title-2">CONTATO</h1>
+                <h2 class="form-description">&#60 Preencha os dados abaixo e logo você será respondido ; &#41; /&#62</h2>
+                <div class="entryarea">
+                    <input class="input" type="text" id="nameInput">
+                    <label for="nameInput" class="labelline nameLabel">nome</label>
+                </div>
+                
+                <div class="entryarea">
+                    <input class="input" type="text" id="emailInput">
+                    <label for="emailInput" class="labelline">email</label>
+                </div>
+                <div class="entryarea">
+                    <div class="entryarea">
+                        <textarea id="messageInput" class="inputMessage" placeholder="Digite sua mensagem..." rows="1"></textarea>
+                    </div>                    
+                </div>
+                <button id="emailButton" class="big-button-principal send-button">Enviar</button>
+            </div>
     </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -36,10 +36,28 @@
     --colorGradientPrimaryActive: #ff9e95;
     --colorGradientSecondaryActive: #e24a7c;
     --colorBorderFormInput: #ECECEC;
+    --colorScrollBar: #513758;
   }
 
 a{
     text-decoration: none
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--colorBackgroundButtons);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--colorScrollBar);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--colorScrollBar);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -622,37 +640,133 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
 
 .entryarea {
   position: relative;
-  height: 40px;
-  line-height: 40px;
+  margin-block: 24px;
 }
 
-input {
-  position: absolute;
-  outline: none;
-  padding: 0 30px;
-  line-height: 80px;
+.input {
+  width: 100%; /* Garante que o input ocupa toda a largura disponível */
+  padding: 13px;
   border-radius: 9px;
-  border: 2px solid var(--colorBorderFormInput);
+  border: 1px solid var(--colorBorderFormInput);
   background: transparent;
-  transition: 0.1s ease;
-  z-index: 1111;
+  transition: border-color 0.2s ease;
+  color: var(--colorTexts);
 }
+
+.inputMessage {
+  width: 100%;
+  min-height: 140px; /* Altura mínima inicial */
+  padding: 13px;
+  border-radius: 9px;
+  border: 1px solid var(--colorBorderFormInput);
+  background: transparent;
+  transition: border-color 0.2s ease;
+  color: var(--colorTexts);
+  resize: none; /* Evita que o usuário redimensione manualmente */
+  overflow-y: auto; /* Adiciona barras de rolagem vertical quando necessário */
+}
+
 
 .labelline {
   position: absolute;
+  left: 10px; /* Posiciona o label dentro da linha externa do input */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%);
   color: var(--colorBorderFormInput);
-  padding: 0 10px;
-  margin: 0 10px;
   transition: 0.2s ease;
-  background: var(--backgroundColor);
+  background-color: var(--backgroundColor);
+  padding: 3px;
 }
 
+
 input:focus + .labelline,
-input:valid + .labelline{
-  height: 30px;
-  line-height: 30px;
-  padding: 0 10px;
-  margin: 0 25px;
-  transform: translate(-15px, -16px);
-  z-index: 1111;
+input:not(:placeholder-shown) + .labelline {
+  top: 0; /* Move o label para cima quando o input está focado ou tem conteúdo */
+  font-size: 15px; /* Ajusta o tamanho do texto do label */
+  color: var(--colorBorderFormInput);
+}
+
+.contact{
+  padding: 150px;
+  gap: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  background-image: url('images/ShiraLogo-PNG-C 1.png');
+    background-position:left;
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    color: white; /* Cor do texto */
+}
+
+.form-title span {
+  margin: 7px;
+  font-size: 31px;
+  font-weight: 500;
+  color: var(--colorTexts);
+}
+
+.form-title{
+  text-align: center;
+}
+
+.form-title-2 {
+  font-size: 71px;
+  font-weight: 700;
+  background: linear-gradient(to left, var(--colorTerciary), var(--colorSecondary));
+  color: var(--backgroundHeaderColor);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  position: relative;
+  bottom: 20px;
+}
+
+.form-description{
+  font-size: 11px;
+  font-weight:400;
+  color: var(--colorTexts);
+  display: block;
+  position: relative;
+  bottom: 30px;
+}
+
+.announcement{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.announcement-text{
+  color: var(--colorTexts);
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.announcement-text-2{
+  font-size: 43px;
+  font-weight: 600;
+  background: linear-gradient(to left, var(--colorTerciary), var(--colorSecondary));
+  color: var(--backgroundHeaderColor);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px;
+}
+
+.form-contact a{
+  font-size: 12px;
+  color: var(--colorTexts);
+  text-decoration: none;
+  display: flex;
+  justify-content: end;
+}
+
+.form-contact button{
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-size: 15px;
 }

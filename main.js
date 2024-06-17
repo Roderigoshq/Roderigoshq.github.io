@@ -62,7 +62,7 @@ $(function() {
             //seção "home"
             $(".title h4").text("Desenvolvedor Front-End e Designer de UX/UI");
             $(".title h5").text("Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades");
-            $(".contact").text("Contate-me");
+            $(".contact-button").text("Contate-me");
             //seção "about-me"
             $(".about-me-title h2").text("Sobre mim");
             $(".about-me-text p").html("Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br><br>Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. <br><br>Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong>")
@@ -78,6 +78,16 @@ $(function() {
             $(".interactions button").text("Aplicação")
             //seção "skills"
             $(".skills h1").text("Habilidades");
+            //seção "contact"
+            $(".announcement-text").html("Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?");
+            $(".announcement-text-2").text("Entre em contato já!");
+            $(".form-title span:nth-child(1)").text("F o r m u l á r i o");
+            $(".form-title span:nth-child(2)").text("d e");
+            $(".form-title-2").text("CONTATO");
+            $(".form-description").html("&lt; Preencha os dados abaixo e logo você será respondido ; &#41; /&#62");
+            $(".nameLabel").text("nome");
+            $(".inputMessage").attr("placeholder", "Digite sua mensagem...");
+            $(".send-button").text("Enviar");
 
             portuguese = false;
         } else {
@@ -90,7 +100,7 @@ $(function() {
             //seção "home"
             $(".title h4").text("Front-End Developer & UX/UI Designer");
             $(".title h5").text("I am a programming student focused on Web development and I intend to expand my knowledge in order to improve my skills");
-            $(".contact").text("Contact me");
+            $(".contact-button").text("Contact me");
             //seção "about-me"
             $(".about-me-title h2").text("About me");
             $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Front-End developer</strong>.")
@@ -106,6 +116,16 @@ $(function() {
             $(".interactions button").text("Application")
             //seção "skills"
             $(".skills h1").text("Skills");
+            //seção "contact"
+            $(".announcement-text").html("Looking to hire me for a <strong>job?</strong> Maybe make a <strong>proposal</strong> or even send feedback?");
+            $(".announcement-text-2").text("Get in touch now!");
+            $(".form-title span:nth-child(1)").text("F o r m");
+            $(".form-title span:nth-child(2)").text("o f");
+            $(".form-title-2").text("CONTACT");
+            $(".form-description").html("&lt; Fill out the information below and you will be answered shortly ; &#41; /&#62");
+            $(".nameLabel").text("name");
+            $(".inputMessage").attr("placeholder", "Type your message...");
+            $(".send-button").text("Send");
 
             portuguese = true;
         }
@@ -122,6 +142,7 @@ const alternativeStyles = {
     '--colorBackgroundButtons': '#D8D8D8',
     '--colorBackgroundButtonsHover': '#D0D0D0',
     '--colorTexts': '#180E1B',
+    '--colorBorderFormInput': '#180E1B',
     '--colorSubtitle': '#494747',
     '--colorContact': '#160D18',
     '--colorPortugueseText': '#929292',
@@ -138,7 +159,8 @@ const alternativeStyles = {
     '--colorGradientPrimary' : '#26172B',
     '--colorGradientSecondary' : '#26172B',
     '--colorGradientPrimaryActive' : '#52395c',
-    '--colorGradientSecondaryActive' : '#52395c'
+    '--colorGradientSecondaryActive' : '#52395c',
+    '--colorScrollBar' : '#929292'
 };
 
 const originalStyles = {
@@ -151,6 +173,7 @@ const originalStyles = {
     '--colorBackgroundButtons': '#281B2C',
     '--colorBackgroundButtonsHover': '#513758',
     '--colorTexts': '#ebebeb',
+    '--colorBorderFormInput': '#ECECEC',
     '--colorSubtitle': '#dedede',
     '--colorContact': '#B6325F',
     '--colorPortugueseText': '#ebebeb',
@@ -167,7 +190,8 @@ const originalStyles = {
     '--colorGradientPrimary' : '#FF887C',
     '--colorGradientSecondary' : '#B6325F',
     '--colorGradientPrimaryActive' : '#ff9e95',
-    '--colorGradientSecondaryActive' : '#e24a7c'
+    '--colorGradientSecondaryActive' : '#e24a7c',
+    '--colorScrollBar' : '#513758'
 };
 
 function restoreAlternativeStyles() {
@@ -277,12 +301,97 @@ document.querySelector('.dark-mode-button').addEventListener('click', function()
 
 var logo_dark = 'images/ShiraLogo - Home_Dark2.png';
 var logo_light = 'images/ShiraLogo - Home.png';
+var arrows_dark = 'images/Group 1 1.png';
+var arrows_light = 'images/Group 1.png';
+
 function trocar(){
     document.querySelector('.logo-3d').src = logo_dark;
     let aux = logo_dark;
     logo_dark = logo_light;
     logo_light = aux;
+    
+    document.querySelector('.arrows').src = arrows_dark;
+    let aux2 = arrows_dark;
+    arrows_dark = arrows_light;
+    arrows_light = aux2;
+
 };
+
+const menuLinks = document.querySelectorAll('.navlist a[href^="#"]');
+const contactLinks = document.querySelectorAll('.main-buttons a');
+
+function getDistanceFromTheTop(element) {
+    const id = element.getAttribute("href");
+    return document.querySelector(id).offsetTop;
+}
+
+function nativeScroll(distanceFromTheTop) {
+    window.scroll({
+        top: distanceFromTheTop,
+        behavior: "smooth",
+    });
+}
+
+function scrollToSection(event) {
+    event.preventDefault();
+    const distanceFromTheTop = getDistanceFromTheTop(event.target) - 90;
+    nativeScroll(distanceFromTheTop);
+}
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", scrollToSection);
+});
+
+contactLinks.forEach(link => {
+    link.addEventListener("click", scrollToSection);
+});
+
+
+document.getElementById('emailButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que o formulário seja enviado via HTTP (comportamento padrão do botão)
+
+    // Captura os valores dos campos de entrada
+    const name = document.getElementById('nameInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+    const message = document.getElementById('messageInput').value.trim();
+
+    // Verifica se todos os campos foram preenchidos
+        // Configuração para enviar e-mail usando serviço externo (neste caso, ElasticEmail)
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "rodrigoshiraquadros@gmail.com", // Substitua pelo seu e-mail
+            Password: "7AF9FA675C2F8892A10A1625C549AC644E15", // Substitua pela sua senha
+            To: "rodrigoshiraquadros@gmail.com", // Substitua pelo e-mail de destino
+            From: "rodrigoshiraquadros@gmail.com", // Substitua pelo seu e-mail
+            Subject: `${name}`,
+            Body: `Email: ${email} \n\n\n ${message}`
+        }).then(
+            message => {
+                message => alert(message)
+                
+                // Exibe um alerta informando que o e-mail foi enviado com sucesso
+                alert('Mensagem enviada com sucesso!');
+
+                // Limpa os campos do formulário após o envio bem-sucedido
+                document.getElementById('nameInput').value = '';
+                document.getElementById('emailInput').value = '';
+                document.getElementById('messageInput').value = '';
+                location.reload();
+            }
+        ).catch(error => {
+            // Em caso de erro no envio do e-mail, exibe um alerta com a mensagem de erro
+            console.error('Erro ao enviar e-mail:', error);
+            alert('Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.');
+        });
+});
+
+
+
+
+
+
+
+
 
 
 
