@@ -388,11 +388,62 @@ document.getElementById('emailButton').addEventListener('click', function(event)
 
 
 
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show')
+        } else {
+            entry.target.classList.remove('show')
+        }
+    })
+})
+
+const elements = document.querySelectorAll('.hidden')
+
+elements.forEach((element) => myObserver.observe(element))
 
 
 
+const myObserver2 = new IntersectionObserver((entries2) => {
+    entries2.forEach((entry2) => {
+        if(entry2.isIntersecting){
+            entry2.target.classList.add('show2')
+        } else {
+            entry2.target.classList.remove('show2')
+        }
+    })
+})
+
+const elements2 = document.querySelectorAll('.hidden2')
+
+elements2.forEach((element2) => myObserver2.observe(element2))
 
 
 
+const myObserver3 = new IntersectionObserver(entries3 => {
+    entries3.forEach((entry3, index) => {
+      if (entry3.isIntersecting) {
+        entry3.target.classList.add('show3', `delay-${index + 1}`);
+      } else {
+        entry3.target.classList.remove('show3', `delay-${index + 1}`);
+      }
+    });
+  }, { threshold: 0.5 }); // Define um threshold de 0.5 para melhorar a detecção de interseção
+  
+  const elements3 = document.querySelectorAll('.hidden3');
+  
+  elements3.forEach((element3, index) => {
+    myObserver3.observe(element3);
+  });
 
+  document.querySelector('.main-logo').addEventListener('mousemove', function(e) {
+    const container = document.querySelector('.logo-container');
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
 
+document.querySelector('.main-logo').addEventListener('mouseleave', function() {
+    const container = document.querySelector('.logo-container');
+    container.style.transform = 'rotateY(0deg) rotateX(0deg)';
+});

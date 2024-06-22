@@ -196,6 +196,12 @@ main {
   font-size: 70px;
   font-weight:600;
   color: var(--colorTexts);
+  animation: typing 1.5s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 610px;
+  height: 90px;
+  border-right: 3px solid;
 }
 
 .title h5 {
@@ -320,11 +326,11 @@ button.big-button-principal:active {
 }
 
 .about-me-title h2 {
+  width: 296px;
   font-size: 53px;
   font-weight: 600;
   color: var(--colorTexts);
 }
-
 
 .about-me-title, .about-me-text {
   width: 1128px;
@@ -340,6 +346,17 @@ button.big-button-principal:active {
   padding: 60px 60px;
   border-radius: 21px;
   border: 1px solid var(--aboutmeColorStroke);
+}
+
+@keyframes typing {
+  from{
+    width:0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 
@@ -374,6 +391,7 @@ box-shadow: inset 10px 21px 14px -16px var(--PortfolioBoxShadow);
   display: block;
   position: relative;
   bottom: 30px;
+  width: 510px;
 }
 
 .text1{
@@ -381,6 +399,7 @@ box-shadow: inset 10px 21px 14px -16px var(--PortfolioBoxShadow);
   font-weight: 500;
   font-size: 44px;
   margin-bottom: 0px;
+  width: 410px;
 }
 
 .portfolio-cards{
@@ -575,6 +594,7 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   border: none;
   cursor: pointer;
   padding: 0;
+  width: 550px;
 }
 
 .logo-image {
@@ -600,6 +620,7 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   font-size: 87px;
   font-weight: 600;
   right: 387px;
+  width: 545px;
 }
 
 .tools h1:after{
@@ -613,6 +634,7 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   flex-direction: row;
   flex-wrap: wrap;
   gap: 43px;
+  width: 500px;
 }
 
 .tool {
@@ -626,11 +648,11 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   background-color: var(--backgroundTools);
   border-radius: 19px;
   border: 1px solid var(--colorToolsStroke);
-  font-weight:500;
+  font-weight: 500;
   font-size: 12px;
   color: var(--colorTexts);
   gap: 10px;
-  transition: background 0.4s;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.4s;
 }
 
 .tool:hover {
@@ -769,4 +791,122 @@ input:not(:placeholder-shown) + .labelline {
   padding: 5px 15px;
   border-radius: 3px;
   font-size: 15px;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  transition: all 2s;
+  animation: typing 1s, blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hidden2 {
+    opacity: 0;
+  filter: blur(15px);
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show2 {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  transition: all 2s;
+}
+
+.tool.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden3 {
+  opacity: 0;
+  transform: translateY(70px);
+}
+
+.show3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0s;
+}
+
+.delay-2 {
+  transition-delay: 0.25s;
+}
+
+.delay-3 {
+  transition-delay: 0.5s;
+}
+
+.delay-4 {
+  transition-delay: 0.75s;
+}
+
+.delay-5 {
+  transition-delay: 1s;
+}
+
+.delay-6 {
+  transition-delay: 1.25s;
+}
+
+.delay-7 {
+  transition-delay: 1.5s;
+}
+
+.delay-8 {
+  transition-delay: 1.75s;
+}
+
+.delay-9 {
+  transition-delay: 2s;
+}
+
+.delay-10 {
+  transition-delay: 2.25s;
+}
+
+.delay-11 {
+  transition-delay: 2.5s;
+}
+
+.delay-12 {
+  transition-delay: 2.75s;
+}
+
+.main-logo {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-3d {
+  animation: rotate3D 8s infinite linear; /* Animação contínua */
+  transform-style: preserve-3d;
+}
+
+@keyframes rotate3D {
+  0% {
+      transform: rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+      transform: rotateY(180deg) rotateX(10deg);
+  }
+  100% {
+      transform: rotateY(360deg) rotateX(0deg);
+  }
 }
