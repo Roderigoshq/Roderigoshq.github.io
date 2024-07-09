@@ -87,6 +87,7 @@ section {
   background-color: var(--backgroundColor);
 }
 
+
 .logo {
   padding-left: 50px;
 }
@@ -182,14 +183,9 @@ main {
   gap: 20px;
 }
 
-.title {
-  margin: 100px 50px;
-}
 
-.title h4{
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 0;
+.title {
+  margin-block: 100px;
 }
 
 .title h1 {
@@ -217,6 +213,9 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
 button {
@@ -332,10 +331,11 @@ button.big-button-principal:active {
   color: var(--colorTexts);
 }
 
-.about-me-title, .about-me-text {
-  width: 1128px;
-  margin-inline: auto;
+.question-icon{
+  height: 50px;
+  width: 50px;
 }
+
 
 .about-me-text {
   gap: 50px;
@@ -363,6 +363,9 @@ button.big-button-principal:active {
 .about-me {
   padding-top: 200px;
   padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 360px;
 }
 
 .portfolio {
@@ -584,10 +587,6 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   width: 100%;
 }
 
-.menu-open{
-  display: block;
-  opacity: 1;
-}
 
 .toggleButton {
   background: none;
@@ -607,6 +606,7 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   flex-direction: row;
   padding: 50px 120px 50px 120px ;
   gap: 101px;
+  justify-content: center;
 }
 
 .tools {
@@ -620,7 +620,7 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   font-size: 87px;
   font-weight: 600;
   right: 387px;
-  width: 545px;
+  width: 550px;
 }
 
 .tools h1:after{
@@ -636,6 +636,7 @@ box-shadow: 0px 21px 47px -4px var(--NavbarShadow);
   gap: 43px;
   width: 500px;
 }
+
 
 .tool {
   display: flex;
@@ -714,10 +715,14 @@ input:not(:placeholder-shown) + .labelline {
   display: flex;
   flex-direction: row;
   justify-content:space-evenly;
+
+}
+
+#contact{
   background-image: url('images/ShiraLogo-PNG-C 1.png');
-    background-position:left;
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-    color: white; /* Cor do texto */
+  background-position: left;
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  color: white; /* Cor do texto */
 }
 
 .form-title span {
@@ -844,47 +849,47 @@ input:not(:placeholder-shown) + .labelline {
 }
 
 .delay-2 {
-  transition-delay: 0.25s;
+  transition-delay: 0.1s;
 }
 
 .delay-3 {
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
 
 .delay-4 {
-  transition-delay: 0.75s;
+  transition-delay: 0.3s;
 }
 
 .delay-5 {
-  transition-delay: 1s;
+  transition-delay: 0.4s;
 }
 
 .delay-6 {
-  transition-delay: 1.25s;
+  transition-delay: 0.5s;
 }
 
 .delay-7 {
-  transition-delay: 1.5s;
+  transition-delay: 0.6s;
 }
 
 .delay-8 {
-  transition-delay: 1.75s;
+  transition-delay: 0.7s;
 }
 
 .delay-9 {
-  transition-delay: 2s;
+  transition-delay: 0.8s;
 }
 
 .delay-10 {
-  transition-delay: 2.25s;
+  transition-delay: 0.9s;
 }
 
 .delay-11 {
-  transition-delay: 2.5s;
+  transition-delay: 1.0s;
 }
 
 .delay-12 {
-  transition-delay: 2.75s;
+  transition-delay: 1.1s;
 }
 
 .main-logo {
@@ -897,6 +902,19 @@ input:not(:placeholder-shown) + .labelline {
 .logo-3d {
   animation: rotate3D 8s infinite linear; /* Animação contínua */
   transform-style: preserve-3d;
+}
+
+.main-logo2 {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-3d2 {
+  animation: rotate3D 8s infinite linear; /* Animação contínua */
+  transform-style: preserve-3d;
+  display: none;
 }
 
 @keyframes rotate3D {

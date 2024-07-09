@@ -1,0 +1,431 @@
+@media screen and (max-width: 1500px){
+    .about-me-text{
+        flex-direction: column;
+    }
+
+    .about-me-text img{
+        border-radius: 21px;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+    .logo-3d{
+        display: none;
+    }
+
+    .title{
+        margin-inline: auto;
+        margin-block: 50px;
+    }
+
+    .gradient{
+        display: flex;
+        justify-content: center;
+    }
+
+    .title h5{
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .socialmedia{
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-buttons{
+        justify-content: center;
+    }
+
+    .about-me{
+        margin-inline: 30px;
+        padding-top: 80px;
+    }
+
+    .logo-image {
+        width: 1003px; 
+        height: auto; 
+        display: none;
+    }
+
+    .skills{
+        display: block;
+        padding: 0px 0px 0px 0px ;
+        gap: 0px;
+        margin-inline: auto;
+    }
+      
+    .tools {
+        display: flex;
+        margin-inline: auto;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tools-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 23px;
+        width: 500px;
+    }
+
+    .tool-icon{
+        width: 80px;
+    }
+
+    .tools h1{
+        color: var(--colorTexts);
+        font-size: 68px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        width: 550px;
+      }
+
+    .tool {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 108px;
+        height: 141px;
+        background-color: var(--backgroundTools);
+        border-radius: 19px;
+        border: 1px solid var(--colorToolsStroke);
+        font-weight: 500;
+        font-size: 12px;
+        color: var(--colorTexts);
+        gap: 10px;
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.4s;
+    }
+      
+    .contact{
+        flex-direction: column;
+        padding: 0px;
+        padding-bottom: 150px;
+    }
+
+    #contact{
+        background-position: left bottom;
+    }
+
+    .arrows{
+        display: none;
+    }
+
+    .announcement-text-2{
+        font-size: 38px;
+    }
+
+    .announcement-text{
+        width: 60vw;
+    }
+
+    .announcement{
+        margin-top: 95px;
+    }
+
+    .form-contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input {
+        width: 70vw; /* Garante que o input ocupa toda a largura disponível */
+        padding: 13px;
+        border-radius: 9px;
+        border: 1px solid var(--colorBorderFormInput);
+        background: transparent;
+        transition: border-color 0.2s ease;
+        color: var(--colorTexts);
+      }
+      
+      .inputMessage {
+        width: 70vw;
+        min-height: 140px; /* Altura mínima inicial */
+        padding: 13px;
+        border-radius: 9px;
+        border: 1px solid var(--colorBorderFormInput);
+        background: transparent;
+        transition: border-color 0.2s ease;
+        color: var(--colorTexts);
+        resize: none; /* Evita que o usuário redimensione manualmente */
+        overflow-y: auto; /* Adiciona barras de rolagem vertical quando necessário */
+      }
+
+      .filter{
+        display: none;
+    }
+      
+    
+}
+
+@media screen and (max-width: 750px){
+    .logo-3d2{
+        display: block;
+        width: 200px;
+    }
+
+    .logo-image {
+        width: 503px; 
+        height: auto; 
+        display: none;
+      }
+
+
+    main{
+        flex-direction: column;
+    }
+
+    .title{
+        margin-inline: auto;
+    }
+
+    .gradient{
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .title h5{
+        text-align: center;
+        margin-inline: auto;
+        font-size: 13px;
+        width: 300px;
+        margin-bottom: 30px;
+    }
+
+    .title h1{
+        font-size: 35px;
+        width: 305px;
+        height: 43px;
+        margin-inline: auto;
+        margin-top: 6px;
+    }
+
+    .main-buttons{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        gap: 0px;
+    }
+
+    .contact-button{
+        margin-top: 13px;
+        font-size: 18px;
+        padding: 8px 60px;
+      }
+
+    .cv{
+        font-size: 18px;
+        padding: 8px 60px;
+    }
+
+    .about-me-title{
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .about-me-title h2 {
+        width: 225px;
+        font-size: 40px;
+    }
+
+    .about-me-text{
+        padding: 15px 15px;
+    }
+
+    .question-icon{
+        height: 30px;
+        width: 30px;
+    }
+
+    .about-me-text p{
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .filter{
+        display: none;
+    }
+
+    .text1{
+        font-size: 22px;
+        text-align: center;
+        width: 410px;
+    }
+
+    .text2{
+        font-size: 66px;
+        bottom: 0px;
+        left: 0px;
+        text-align: center;
+        width: 410px;
+    }
+
+    .portfolio-header{
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+          
+    .tools {
+        display: flex;
+        margin-inline: auto;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tools-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 23px;
+        width: 400px;
+    }
+
+    .tool-icon{
+        width: 50px;
+    }
+
+    .tools h1{
+        color: var(--colorTexts);
+        font-size: 43px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        width: 550px;
+      }
+
+    .tool {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 88px;
+        height: 101px;
+        background-color: var(--backgroundTools);
+        border-radius: 19px;
+        border: 1px solid var(--colorToolsStroke);
+        font-weight: 500;
+        font-size: 12px;
+        color: var(--colorTexts);
+        gap: 10px;
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.4s;
+    }
+      
+    .contact{
+        flex-direction: column;
+        padding: 0px;
+        gap: 75px;
+    }
+
+    .bate-papo-icon{
+        width: 100px;
+    }
+
+    .arrows{
+        display: none;
+    }
+
+    .announcement-text-2{
+        font-size: 28px;
+    }
+
+    .form-contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 150px;
+    }
+
+    .form-title span {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--colorTexts);
+      }
+      
+      .form-title{
+        text-align: center;
+      }
+      
+      .form-title-2 {
+        font-size: 51px;
+        font-weight: 700;
+        background: linear-gradient(to left, var(--colorTerciary), var(--colorSecondary));
+        color: var(--backgroundHeaderColor);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: block;
+        position: relative;
+        bottom: 20px;
+    }
+
+    .form-description{
+        font-size: 8px;
+    }
+
+    .input {
+        width: 70vw; /* Garante que o input ocupa toda a largura disponível */
+        padding: 13px;
+        border-radius: 9px;
+        border: 1px solid var(--colorBorderFormInput);
+        background: transparent;
+        transition: border-color 0.2s ease;
+        color: var(--colorTexts);
+      }
+      
+      .inputMessage {
+        width: 70vw;
+        min-height: 140px; /* Altura mínima inicial */
+        padding: 13px;
+        border-radius: 9px;
+        border: 1px solid var(--colorBorderFormInput);
+        background: transparent;
+        transition: border-color 0.2s ease;
+        color: var(--colorTexts);
+        resize: none; /* Evita que o usuário redimensione manualmente */
+        overflow-y: auto; /* Adiciona barras de rolagem vertical quando necessário */
+      }
+      
+      
+      .labelline {
+        position: absolute;
+        left: 10px; /* Posiciona o label dentro da linha externa do input */
+        top: 50%; /* Centraliza verticalmente */
+        transform: translateY(-50%);
+        color: var(--colorBorderFormInput);
+        transition: 0.2s ease;
+        background-color: var(--backgroundColor);
+        padding: 3px;
+      }
+
+      .entryarea {
+        position: relative;
+        margin-block: 9px;
+    }
+
+      .announcement-text{
+        font-size: 12px;
+        width: 80vw;
+    }
+
+    .announcement{
+        margin-top: 65px;
+    }
+
+    #contact{
+        background-position: bottom;
+      }
+      
+}

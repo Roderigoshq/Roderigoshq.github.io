@@ -317,12 +317,23 @@ function trocar(){
 
 };
 
-const menuLinks = document.querySelectorAll('.navlist a[href^="#"]');
-const contactLinks = document.querySelectorAll('.main-buttons a');
 
 function getDistanceFromTheTop(element) {
     const id = element.getAttribute("href");
-    return document.querySelector(id).offsetTop;
+    
+    if (!id) {
+        console.error(`Href attribute is missing or empty on element: ${element}`);
+        return 0; // Retorna 0 se o href não estiver definido
+    }
+
+    const targetElement = document.querySelector(id);
+
+    if (targetElement) {
+        return targetElement.offsetTop;
+    } else {
+        console.error(`Element not found: ${id}`);
+        return 0; // Retorna 0 se o elemento não for encontrado
+    }
 }
 
 function nativeScroll(distanceFromTheTop) {
@@ -338,13 +349,14 @@ function scrollToSection(event) {
     nativeScroll(distanceFromTheTop);
 }
 
+const menuLinks = document.querySelectorAll('.navlist a[href^="#"]');
+const contactLinks = document.querySelectorAll('.main-buttons a[href^="#"]:nth-child(2)');
+
+
 menuLinks.forEach(link => {
     link.addEventListener("click", scrollToSection);
 });
 
-contactLinks.forEach(link => {
-    link.addEventListener("click", scrollToSection);
-});
 
 
 document.getElementById('emailButton').addEventListener('click', function(event) {
