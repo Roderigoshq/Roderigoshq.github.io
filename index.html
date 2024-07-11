@@ -14,6 +14,9 @@
 <body>
     <header class="container-flex">
         <div class="navbar">
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="images\bars-solid-mobile.svg" alt="ícone do menu"></button>
+            </div>
             <div class="logo">
                 <a href="#home"><img src="/images/ShiraLogoTipografia2-PNG-c2.png" width="120" alt="logo"></a>   
             </div>
@@ -43,6 +46,22 @@
                     <button class="portugues">Português</button>
                 </div>
             </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Página Inicial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-me">Sobre mim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfólio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Habilidades</a>
+                </li>
+            </ul>
         </div>
     </header>
     <section class="home" id="home">
@@ -80,9 +99,9 @@
                 <h2 class="hidden">Sobre mim</h2>
                 <img class="question-icon" src="/images/4210456.png" alt="icone">
             </div>
-            <div class="about-me-text">
-                <img src="/images/Rectangle 56.png" alt="photo">
-                <p>
+            <div class="about-me-text hidden6">
+                <img src="images/fotoLinkedin2.png" class="hidden6 foto" alt="photo">
+                <p class="hidden6">
                     Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br>
                     <br>
                     Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. 
@@ -98,7 +117,7 @@
                 <h2 class="text1 hidden">Um pouco do meu</h2>
                 <h2 class="text2 hidden">Portfólio</h2>
             </div>
-            <div class="filter">
+            <div class="filter hidden5">
                 <div class="dropdown">
                     <div class="select">
                         <span class="selected">Todos</span>
@@ -259,28 +278,28 @@
     <section id="contact">
         <div class="contact">
                 <div class="announcement">
-                    <img class="bate-papo-icon" src="images/96351e29-ba09-4245-9606-ff8eb2a4d90b 1.png" alt="bate-papo-icon">
-                    <h3 class="announcement-text">Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?</h3>
-                    <h2 class="announcement-text-2">Entre em contato já!</h2> 
-                    <img class="arrows" src="images/Group 1.png" alt="setas">
+                    <img class="bate-papo-icon hidden4" src="images/96351e29-ba09-4245-9606-ff8eb2a4d90b 1.png" alt="bate-papo-icon">
+                    <h3 class="announcement-text hidden4">Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?</h3>
+                    <h2 class="announcement-text-2 hidden4">Entre em contato já!</h2> 
+                    <img class="arrows hidden4" src="images/Group 1.png" alt="setas">
                 </div>
                 <div class="form-contact">
-                    <h1 class="form-title">
+                    <h1 class="form-title hidden5">
                         <span>F o r m u l á r i o</span>
                         <span>d e</span>
                     </h1>
-                    <h1 class="form-title-2">CONTATO</h1>
-                    <h2 class="form-description">&#60 Preencha os dados abaixo e logo você será respondido ; &#41; /&#62</h2>
-                    <div class="entryarea">
+                    <h1 class="form-title-2 hidden5">CONTATO</h1>
+                    <h2 class="form-description hidden5">&#60 Preencha os dados abaixo e logo você será respondido ; &#41; /&#62</h2>
+                    <div class="entryarea hidden5">
                         <input class="input" type="text" id="nameInput">
                         <label for="nameInput" class="labelline nameLabel">nome</label>
                     </div>
                     
-                    <div class="entryarea">
+                    <div class="entryarea hidden5">
                         <input class="input" type="text" id="emailInput">
                         <label for="emailInput" class="labelline">email</label>
                     </div>
-                    <div class="entryarea">
+                    <div class="entryarea hidden5">
                         <div class="entryarea">
                             <textarea id="messageInput" class="inputMessage" placeholder="Digite sua mensagem..." rows="1"></textarea>
                         </div>                    
@@ -289,6 +308,9 @@
                 </div>
             </div>
     </section>
+    <footer>
+        <h5>&#60; Feito com carinho por </h5>
+    </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="main.js"></script>
 </body>

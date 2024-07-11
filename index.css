@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -60,8 +62,6 @@ a{
   background: var(--colorScrollBar);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 .navbar {
   position: fixed;
   height: 70px;
@@ -76,6 +76,10 @@ a{
 box-shadow: 0px 9px 5px -4px var(--NavbarShadow);
 }
 
+.dark-mode{
+  animation: toBottom 1s ease-in-out;
+}
+
 header {
   background: var(--backgroundHeaderColor);
   position: fixed;
@@ -87,9 +91,13 @@ section {
   background-color: var(--backgroundColor);
 }
 
+.nav-list{
+  padding-left: 0px;
+}
 
 .logo {
   padding-left: 50px;
+  animation: toBottom 1s ease-in-out;
 }
 
 .preferences {
@@ -107,6 +115,7 @@ section {
   border: var(--colorBackgroundButtons) solid 0px;
   transition: 0.5s;
   font-size: 13px;
+  animation: toBottom 1s ease-in-out;
 }
 
 .portugues:hover {
@@ -161,6 +170,49 @@ section {
 .nav-item {
   list-style: none;
   align-items: center;
+  animation: toBottom 1s ease-in-out;
+}
+
+/* mobile navbar */
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  transition: .5s;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  transition: 0.3s;
+}
+
+.nav-link:hover:after {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu .nav-item {
+  display: block;
+  padding-top: 1.2rem;
+  color: var(--colorTexts);;
 }
 
 main {
@@ -176,6 +228,7 @@ main {
 .socialmedia{
   display: flex;
   gap: 10px;
+  animation: toRight 1s ease-in-out;
 }
 
 .main-buttons {
@@ -205,6 +258,7 @@ main {
   font-weight:400;
   color: var(--colorSubtitle);
   width: 500px;
+  animation: toRight 1s ease-in-out;
 }
 
 .gradient {
@@ -216,6 +270,7 @@ main {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
+  animation: toRight 0.7s ease-in;
 }
 
 button {
@@ -357,6 +412,12 @@ button.big-button-principal:active {
   50% {
     border-color: transparent;
   }
+}
+
+.foto{
+  width: 337px;
+  height: 398px;
+  object-fit: cover;
 }
 
 
@@ -771,6 +832,7 @@ input:not(:placeholder-shown) + .labelline {
   font-weight: 400;
   text-align: center;
   margin-top: 30px;
+  width: 500px;
 }
 
 .announcement-text-2{
@@ -844,6 +906,97 @@ input:not(:placeholder-shown) + .labelline {
   transform: translateY(0);
 }
 
+.hidden4{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show4 {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+
+.hidden5{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(90%);
+  transition: all 1s;
+}
+
+.show5 {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+
+.hidden6{
+  opacity: 0;
+  filter: blur(5px);
+  transform:scale(0.7);
+  transition: all 1s;
+}
+
+.show6 {
+  opacity: 1;
+  transform:scale(1);
+  filter: blur(0px);
+}
+
+@keyframes toRight {
+  from {
+    opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  }
+}
+
+@keyframes toLeft {
+  from {
+    opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  }
+} 
+
+
+@keyframes toBottom{
+  from {
+    opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+
 .delay-1 {
   transition-delay: 0s;
 }
@@ -902,6 +1055,7 @@ input:not(:placeholder-shown) + .labelline {
 .logo-3d {
   animation: rotate3D 8s infinite linear; /* Animação contínua */
   transform-style: preserve-3d;
+  animation: toLeft 1s ease-in-out;
 }
 
 .main-logo2 {
@@ -917,14 +1071,22 @@ input:not(:placeholder-shown) + .labelline {
   display: none;
 }
 
-@keyframes rotate3D {
-  0% {
-      transform: rotateY(0deg) rotateX(0deg);
-  }
-  50% {
-      transform: rotateY(180deg) rotateX(10deg);
-  }
-  100% {
-      transform: rotateY(360deg) rotateX(0deg);
-  }
+footer{
+  background-color: #1E1122;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
+footer h5{
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+footer h5:after{
+  content: "Rodrigo Shiraishi />";
+  color: var(--colorSecondary);
+  font-size: 13px;
+  font-weight: 600;
 }

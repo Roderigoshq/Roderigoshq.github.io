@@ -162,8 +162,48 @@
       .filter{
         display: none;
     }
-      
+     
     
+}
+
+@media screen and (max-width: 950px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+    
+    .mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .nav-link:hover:after {
+        display: none;
+    }
+
+    .open{
+        display: block;
+    }
+
+    .icon {
+        padding-left: 20px;
+        width: 50px;
+        background-color: #0f0911;
+        color: white;
+    }
+
+    .logo {
+        padding-left: 245px;
+      }
 }
 
 @media screen and (max-width: 750px){
@@ -176,8 +216,11 @@
         width: 503px; 
         height: auto; 
         display: none;
-      }
+    }
 
+    .logo {
+    padding-left: 115px;
+    }
 
     main{
         flex-direction: column;

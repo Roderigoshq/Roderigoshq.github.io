@@ -52,7 +52,7 @@ $(function() {
     var portuguese = false;
 
     $("button.portugues").click(function() {
-        if (portuguese) {
+        if (window.innerWidth > 600){ if (portuguese) {
             //cabeçalho
             $(".navlist ul li:nth-child(1) a").text("Página Inicial");
             $(".navlist ul li:nth-child(2) a").text("Sobre mim");
@@ -128,7 +128,86 @@ $(function() {
             $(".send-button").text("Send");
 
             portuguese = true;
+        }}else{
+            if (portuguese) {
+                //cabeçalho
+                $(".navlist ul li:nth-child(1) a").text("Página Inicial");
+                $(".navlist ul li:nth-child(2) a").text("Sobre mim");
+                $(".navlist ul li:nth-child(3) a").text("Portfólio");
+                $(".navlist ul li:nth-child(4) a").text("Habilidades");
+                $("button.portugues").text("PT");
+                //seção "home"
+                $(".title h4").text("Desenvolvedor Front-End e Designer de UX/UI");
+                $(".title h5").text("Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades");
+                $(".contact-button").text("Contate-me");
+                //seção "about-me"
+                $(".about-me-title h2").text("Sobre mim");
+                $(".about-me-text p").html("Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br><br>Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. <br><br>Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong>")
+                //seção "portfolio"
+                $(".portfolio-header .portfolio-title .text1").text("Um pouco do meu");
+                $(".portfolio-header .portfolio-title .text2").text("Portfólio");
+                $(".selected").eq(0).text("Todos");
+                $(".menu").children().eq(0).text("Todos");
+                $(".menu").children().eq(1).text("Portfólio");
+                $(".menu").children().eq(2).text("Website Institucional");
+                $(".menu").children().eq(3).text("Landing Page");
+                $(".repository").text("< repositório />")
+                $(".interactions button").text("Aplicação")
+                //seção "skills"
+                $(".skills h1").text("Habilidades");
+                //seção "contact"
+                $(".announcement-text").html("Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?");
+                $(".announcement-text-2").text("Entre em contato já!");
+                $(".form-title span:nth-child(1)").text("F o r m u l á r i o");
+                $(".form-title span:nth-child(2)").text("d e");
+                $(".form-title-2").text("CONTATO");
+                $(".form-description").html("&lt; Preencha os dados abaixo e logo você será respondido ; &#41; /&#62");
+                $(".nameLabel").text("nome");
+                $(".inputMessage").attr("placeholder", "Digite sua mensagem...");
+                $(".send-button").text("Enviar");
+    
+                portuguese = false;
+            } else {
+                // Restore English
+                $(".navlist ul li:nth-child(1) a").text("Home");
+                $(".navlist ul li:nth-child(2) a").text("About me");
+                $(".navlist ul li:nth-child(3) a").text("Portfolio");
+                $(".navlist ul li:nth-child(4) a").text("Skills");
+                $("button.portugues").text("EN");
+                //seção "home"
+                $(".title h4").text("Front-End Developer & UX/UI Designer");
+                $(".title h5").text("I am a programming student focused on Web development and I intend to expand my knowledge in order to improve my skills");
+                $(".contact-button").text("Contact me");
+                //seção "about-me"
+                $(".about-me-title h2").text("About me");
+                $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Front-End developer</strong>.")
+                //seção "portfolio"
+                $(".portfolio-header .portfolio-title .text1").text("A little bit of my");
+                $(".portfolio-header .portfolio-title .text2").text("Portfolio");
+                $(".selected").eq(0).text("All");
+                $(".menu").children().eq(0).text("All");
+                $(".menu").children().eq(1).text("Portfolio");
+                $(".menu").children().eq(2).text("Institutional Website");
+                $(".menu").children().eq(3).text("Landing Page");
+                $(".repository").text("< repository />")
+                $(".interactions button").text("Application")
+                //seção "skills"
+                $(".skills h1").text("Skills");
+                //seção "contact"
+                $(".announcement-text").html("Looking to hire me for a <strong>job?</strong> Maybe make a <strong>proposal</strong> or even send feedback?");
+                $(".announcement-text-2").text("Get in touch now!");
+                $(".form-title span:nth-child(1)").text("F o r m");
+                $(".form-title span:nth-child(2)").text("o f");
+                $(".form-title-2").text("CONTACT");
+                $(".form-description").html("&lt; Fill out the information below and you will be answered shortly ; &#41; /&#62");
+                $(".nameLabel").text("name");
+                $(".inputMessage").attr("placeholder", "Type your message...");
+                $(".send-button").text("Send");
+    
+                portuguese = true;
+            }
         }
+       
     });
 });
 
@@ -446,9 +525,9 @@ const myObserver3 = new IntersectionObserver(entries3 => {
   
   elements3.forEach((element3, index) => {
     myObserver3.observe(element3);
-  });
+});
 
-  document.querySelector('.main-logo').addEventListener('mousemove', function(e) {
+document.querySelector('.main-logo').addEventListener('mousemove', function(e) {
     const container = document.querySelector('.logo-container');
     const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
     const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
@@ -459,3 +538,107 @@ document.querySelector('.main-logo').addEventListener('mouseleave', function() {
     const container = document.querySelector('.logo-container');
     container.style.transform = 'rotateY(0deg) rotateX(0deg)';
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    function updateButtonText() {
+        var button = document.querySelector(".portugues");
+        if (window.innerWidth < 600) {
+            button.textContent = "PT";
+        } else {
+            button.textContent = "Português";
+        }
+    }
+
+    // Atualiza o texto do botão quando a página é carregada
+    updateButtonText();
+
+    // Atualiza o texto do botão quando a janela é redimensionada
+    window.addEventListener("resize", updateButtonText);
+});
+
+function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open')) {
+        menuMobile.classList.remove('open')
+        document.querySelector('.icon').src = "images/bars-solid-mobile.svg"
+    } else {
+        menuMobile.classList.add('open')
+        document.querySelector('.icon').src = "images/xmark-solid.svg"
+    }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const myObserver4 = new IntersectionObserver(entries4 => {
+        entries4.forEach((entry4) => {
+            if (entry4.isIntersecting) {
+                console.log('Elemento visível:', entry4.target);
+                entry4.target.classList.add('show4');
+            } else {
+                console.log('Elemento não visível:', entry4.target);
+                entry4.target.classList.remove('show4');
+            }
+        });
+    }, { threshold: 0.5 }); // Define um threshold de 0.5 para melhorar a detecção de interseção
+    
+    const elements4 = document.querySelectorAll('.hidden4');
+    
+    elements4.forEach((element4) => {
+        console.log('Observando elemento:', element4);
+        myObserver4.observe(element4);
+    });
+});
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const myObserver5 = new IntersectionObserver(entries5 => {
+//         entries5.forEach((entry5) => {
+//             if (entry5.isIntersecting) {
+//                 console.log('Elemento visível:', entry5.target);
+//                 entry5.target.classList.add('show5');
+//             } else {
+//                 console.log('Elemento não visível:', entry5.target);
+//                 entry5.target.classList.remove('show5');
+//             }
+//         });
+//     }, { threshold: 0.5 }); // Define um threshold de 0.5 para melhorar a detecção de interseção
+    
+//     const elements5 = document.querySelectorAll('.hidden5');
+    
+//     elements5.forEach((element5) => {
+//         console.log('Observando elemento:', element5);
+//         myObserver5.observe(element5);
+//     });
+// });
+
+const myObserver5 = new IntersectionObserver((entries5) => {
+    entries5.forEach((entry5) => {
+        if(entry5.isIntersecting){
+            entry5.target.classList.add('show5')
+        } else {
+            entry5.target.classList.remove('show5')
+        }
+    })
+})
+
+const elements5 = document.querySelectorAll('.hidden5')
+
+elements5.forEach((element5) => myObserver5.observe(element5));
+
+
+
+const myObserver6 = new IntersectionObserver((entries6) => {
+    entries6.forEach((entry6) => {
+        if(entry6.isIntersecting){
+            entry6.target.classList.add('show6')
+        } else {
+            entry6.target.classList.remove('show6')
+        }
+    })
+})
+
+const elements6 = document.querySelectorAll('.hidden6')
+
+elements6.forEach((element6) => myObserver6.observe(element6))
