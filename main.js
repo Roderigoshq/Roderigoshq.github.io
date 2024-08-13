@@ -1,4 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Exibe todos os cartões inicialmente
+    filterCards('todos');
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+        const select = dropdown.querySelector('.select');
+        const caret = dropdown.querySelector('.caret');
+        const menu = dropdown.querySelector('.menu');
+        const options = dropdown.querySelectorAll('.menu li');
+        const selected = dropdown.querySelector('.selected');
+
+        select.addEventListener('click', () => {
+            select.classList.toggle('select-clicked');
+            caret.classList.toggle('caret-rotate');
+            menu.classList.toggle('menu-open');
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                selected.innerText = option.innerText;
+                select.classList.remove('select-clicked');
+                caret.classList.remove('caret-rotate');
+                menu.classList.remove('menu-open');document.addEventListener("DOMContentLoaded", function() {
+    // Exibe todos os cartões inicialmente
+    filterCards('todos');
+
     const dropdowns = document.querySelectorAll('.dropdown');
 
     dropdowns.forEach(dropdown => {
@@ -20,14 +47,50 @@ document.addEventListener("DOMContentLoaded", function() {
                 select.classList.remove('select-clicked');
                 caret.classList.remove('caret-rotate');
                 menu.classList.remove('menu-open');
-                options.forEach(option => {
-                    option.classList.remove('active');
-                });
+                options.forEach(opt => opt.classList.remove('active'));
                 option.classList.add('active');
+
+                // Filtra os cards com base na opção selecionada
+                const filterValue = option.getAttribute('data-filter');
+                filterCards(filterValue);
             });
         });
     });
+
+    function filterCards(filterValue) {
+        const cards = document.querySelectorAll('.cards');
+        cards.forEach(card => {
+            if (filterValue === 'todos' || card.classList.contains(filterValue)) {
+                card.classList.remove('hidden3');
+            } else {
+                card.classList.add('hidden3');
+            }
+        });
+    }
 });
+
+                options.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+
+                // Filtra os cards com base na opção selecionada
+                const filterValue = option.getAttribute('data-filter');
+                filterCards(filterValue);
+            });
+        });
+    });
+
+    function filterCards(filterValue) {
+        const cards = document.querySelectorAll('.cards');
+        cards.forEach(card => {
+            if (filterValue === 'todos' || card.classList.contains(filterValue)) {
+                card.classList.remove('hidden3');
+            } else {
+                card.classList.add('hidden3');
+            }
+        });
+    }
+});
+
 
 document.querySelector('.toggleButton').addEventListener('click', function() {
     var images = document.querySelectorAll('.logo-image');
@@ -60,20 +123,21 @@ $(function() {
             $(".navlist ul li:nth-child(4) a").text("Habilidades");
             $("button.portugues").text("Português");
             //seção "home"
-            $(".title h4").text("Desenvolvedor Front-End e Designer de UX/UI");
-            $(".title h5").text("Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades");
+            $(".title h4").text("Desenvolvedor Fullstack e Designer de UX/UI");
+            $(".title h5").text("Sou um estudante de programação com foco em desenvolvimento Fullstack e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades");
             $(".contact-button").text("Contate-me");
             //seção "about-me"
             $(".about-me-title h2").text("Sobre mim");
-            $(".about-me-text p").html("Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br><br>Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. <br><br>Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong>")
+            $(".about-me-text p").html("Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br><br>Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. <br><br>Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Fullstack.</strong>")
             //seção "portfolio"
             $(".portfolio-header .portfolio-title .text1").text("Um pouco do meu");
             $(".portfolio-header .portfolio-title .text2").text("Portfólio");
             $(".selected").eq(0).text("Todos");
             $(".menu").children().eq(0).text("Todos");
-            $(".menu").children().eq(1).text("Portfólio");
-            $(".menu").children().eq(2).text("Website Institucional");
-            $(".menu").children().eq(3).text("Landing Page");
+            $(".menu").children().eq(1).text("Apps");
+            $(".menu").children().eq(2).text("Landing Page");
+            $(".menu").children().eq(3).text("Website Institucional");
+            $(".menu").children().eq(4).text("Portfólios");
             $(".repository").text("< repositório />")
             $(".interactions button").text("Aplicação")
             //seção "skills"
@@ -88,6 +152,17 @@ $(function() {
             $(".nameLabel").text("nome");
             $(".inputMessage").attr("placeholder", "Digite sua mensagem...");
             $(".send-button").text("Enviar");
+            $(".projeto1").text("Aplicativo de gestão de saúdeque permite que você acompanhe sua saúde de maneiracompleta, mantendo todas as informações importantesao seu alcance e com uma funcionalidade de escanear seus exames.");
+            $(".projeto2").text("Site feito para consultar o tempo, a umidade e a temperatura e um país, estado ou cidade feito através de uma conexão com uma API.");
+            $(".projeto3").text("Site Institucional desenvolvido para uma instituição beneficiente.");
+            $(".projeto4").text("Meu Portfolio pessoal desenvolvido para mostrar um pouco mais de mim, dos meus projetos e dos meus conhecimentos.");
+            $(".projeto5").text("Design de um portfolio feito para a Taynah Saito.");
+            $(".footer").text("< Feito com carinho por ");
+            $(".projeto1-title").text("YE Gestão de Saúde");
+            $(".projeto3-title").text("Escola o Semeador");
+            $(".projeto4-title").text("Portfólio RShira");
+            $(".projeto5-title").text("Portfólio Taynah Saito");
+            
 
             portuguese = false;
         } else {
@@ -98,20 +173,21 @@ $(function() {
             $(".navlist ul li:nth-child(4) a").text("Skills");
             $("button.portugues").text("English");
             //seção "home"
-            $(".title h4").text("Front-End Developer & UX/UI Designer");
-            $(".title h5").text("I am a programming student focused on Web development and I intend to expand my knowledge in order to improve my skills");
+            $(".title h4").text("Fullstack Developer & UX/UI Designer");
+            $(".title h5").text("I am a programming student focused on Fullstack development and I intend to expand my knowledge in order to improve my skills");
             $(".contact-button").text("Contact me");
             //seção "about-me"
             $(".about-me-title h2").text("About me");
-            $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Front-End developer</strong>.")
+            $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Fullstack developer</strong>.")
             //seção "portfolio"
             $(".portfolio-header .portfolio-title .text1").text("A little bit of my");
             $(".portfolio-header .portfolio-title .text2").text("Portfolio");
             $(".selected").eq(0).text("All");
             $(".menu").children().eq(0).text("All");
-            $(".menu").children().eq(1).text("Portfolio");
-            $(".menu").children().eq(2).text("Institutional Website");
-            $(".menu").children().eq(3).text("Landing Page");
+            $(".menu").children().eq(1).text("Apps");
+            $(".menu").children().eq(2).text("Landing Page");
+            $(".menu").children().eq(3).text("Institutional Website");
+            $(".menu").children().eq(4).text("Portfolios");
             $(".repository").text("< repository />")
             $(".interactions button").text("Application")
             //seção "skills"
@@ -126,6 +202,17 @@ $(function() {
             $(".nameLabel").text("name");
             $(".inputMessage").attr("placeholder", "Type your message...");
             $(".send-button").text("Send");
+            $(".projeto1").text("Health management application that allows you to monitor your health completely, keeping all important information at your fingertips and with a functionality to scan your exams.");
+            $(".projeto2").text("Website made to query the weather, humidity and temperature and a country, state or city made through a connection with an API.");
+            $(".projeto3").text("My personal Portfolio developed to show a little more about myself, my projects and my knowledge.");
+            $(".projeto4").text("Institutional website developed for a charitable institution.");
+            $(".projeto5").text("Portfolio interface design made for Taynah Saito.");
+            $(".footer").text("< Made with love by ");
+            $(".projeto1-title").text("YE Gestão de Saúde");
+            $(".projeto3-title").text("o Semeador School");
+            $(".projeto4-title").text("RShira's Portfolio");
+            $(".projeto5-title").text("Taynah Saito's Portfolio");
+            
 
             portuguese = true;
         }}else{
@@ -137,20 +224,21 @@ $(function() {
                 $(".navlist ul li:nth-child(4) a").text("Habilidades");
                 $("button.portugues").text("PT");
                 //seção "home"
-                $(".title h4").text("Desenvolvedor Front-End e Designer de UX/UI");
-                $(".title h5").text("Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades");
+                $(".title h4").text("Desenvolvedor Fullstack e Designer de UX/UI");
+                $(".title h5").text("Sou um estudante de programação com foco em desenvolvimento Fullstack e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades");
                 $(".contact-button").text("Contate-me");
                 //seção "about-me"
                 $(".about-me-title h2").text("Sobre mim");
-                $(".about-me-text p").html("Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br><br>Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. <br><br>Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong>")
+                $(".about-me-text p").html("Olá, meu nome é <strong>Rodrigo Shiraishi Quadros</strong>, um apaixonado em criar websites bonitos. Desde 2018, sou fascinado por qualquer coisa relacionada á <strong>interfaces</strong> ou <strong>designs</strong> bem desenhados, e sempre desenvolvi minhas habilidades desde então, fazendo logos, banners, designs gráficos em geral. <br><br>Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. <br><br>Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Fullstack.</strong>")
                 //seção "portfolio"
                 $(".portfolio-header .portfolio-title .text1").text("Um pouco do meu");
                 $(".portfolio-header .portfolio-title .text2").text("Portfólio");
                 $(".selected").eq(0).text("Todos");
                 $(".menu").children().eq(0).text("Todos");
-                $(".menu").children().eq(1).text("Portfólio");
-                $(".menu").children().eq(2).text("Website Institucional");
-                $(".menu").children().eq(3).text("Landing Page");
+                $(".menu").children().eq(1).text("Apps");
+                $(".menu").children().eq(2).text("Landing Page");
+                $(".menu").children().eq(3).text("Website Institucional");
+                $(".menu").children().eq(4).text("Portfólios");
                 $(".repository").text("< repositório />")
                 $(".interactions button").text("Aplicação")
                 //seção "skills"
@@ -165,6 +253,16 @@ $(function() {
                 $(".nameLabel").text("nome");
                 $(".inputMessage").attr("placeholder", "Digite sua mensagem...");
                 $(".send-button").text("Enviar");
+                $(".projeto1").text("Aplicativo de gestão de saúdeque permite que você acompanhe sua saúde de maneiracompleta, mantendo todas as informações importantesao seu alcance e com uma funcionalidade de escanear seus exames.");
+                $(".projeto2").text("Site feito para consultar o tempo, a umidade e a temperatura e um país, estado ou cidade feito através de uma conexão com uma API.");
+                $(".projeto3").text("Site Institucional desenvolvido para uma instituição beneficiente.");
+                $(".projeto4").text("Meu Portfolio pessoal desenvolvido para mostrar um pouco mais de mim, dos meus projetos e dos meus conhecimentos.");
+                $(".projeto5").text("Design de um portfolio feito para a Taynah Saito.");
+                $(".footer").text("< Feito com carinho por ");
+                $(".projeto1-title").text("YE Gestão de Saúde");
+                $(".projeto3-title").text("Escola o Semeador");
+                $(".projeto4-title").text("Portfólio RShira");
+                $(".projeto5-title").text("Portfólio Taynah Saito");
     
                 portuguese = false;
             } else {
@@ -175,20 +273,21 @@ $(function() {
                 $(".navlist ul li:nth-child(4) a").text("Skills");
                 $("button.portugues").text("EN");
                 //seção "home"
-                $(".title h4").text("Front-End Developer & UX/UI Designer");
-                $(".title h5").text("I am a programming student focused on Web development and I intend to expand my knowledge in order to improve my skills");
+                $(".title h4").text("Fullstack Developer & UX/UI Designer");
+                $(".title h5").text("I am a programming student focused on Fullstack development and I intend to expand my knowledge in order to improve my skills");
                 $(".contact-button").text("Contact me");
                 //seção "about-me"
                 $(".about-me-title h2").text("About me");
-                $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Front-End developer</strong>.")
+                $(".about-me-text p").html("Hello, my name is <strong>Rodrigo Shiraishi Quadros</strong>, passionate about creating beautiful websites. Since 2018, I've been fascinated by anything related to <strong>interfaces</strong> or well-designed <strong>designs</strong>, and I've always developed my skills since then, making logos, banners, graphic designs in general. <br><br>In 2023, I decided to enter the world of programming, studying at the <strong>Instituto Mauá de Tecnologia</strong>, but I started out quite lost in relation to the area in which I would work. To be quite honest, I didn't know anything about programming, so I decided to inform myself and wait until I find an area that I really like. <br><br>After 1 semester, I started studying <strong>CSS</strong> and <strong>HTML</strong>, my first contact with <strong>Front-End</strong> and I even worked to structure a project for a <strong>donation institution</strong>, and that's when I simply fell in love with Front-End. Therefore, I started practicing more and more to qualify for a job, and I am currently <strong>studying constantly to improve my learning</strong> and <strong>start my career as a Fullstack developer</strong>.")
                 //seção "portfolio"
                 $(".portfolio-header .portfolio-title .text1").text("A little bit of my");
                 $(".portfolio-header .portfolio-title .text2").text("Portfolio");
                 $(".selected").eq(0).text("All");
                 $(".menu").children().eq(0).text("All");
-                $(".menu").children().eq(1).text("Portfolio");
-                $(".menu").children().eq(2).text("Institutional Website");
-                $(".menu").children().eq(3).text("Landing Page");
+                $(".menu").children().eq(1).text("Apps");
+                $(".menu").children().eq(2).text("Landing Page");
+                $(".menu").children().eq(3).text("Institutional Website");
+                $(".menu").children().eq(4).text("Portfolios");
                 $(".repository").text("< repository />")
                 $(".interactions button").text("Application")
                 //seção "skills"
@@ -203,6 +302,16 @@ $(function() {
                 $(".nameLabel").text("name");
                 $(".inputMessage").attr("placeholder", "Type your message...");
                 $(".send-button").text("Send");
+                $(".projeto1").text("Health management application that allows you to monitor your health completely, keeping all important information at your fingertips and with a functionality to scan your exams.");
+                $(".projeto2").text("Website made to query the weather, humidity and temperature and a country, state or city made through a connection with an API.");
+                $(".projeto3").text("My personal Portfolio developed to show a little more about myself, my projects and my knowledge.");
+                $(".projeto4").text("Institutional website developed for a charitable institution.");
+                $(".projeto5").text("Portfolio interface design made for Taynah Saito.");
+                $(".footer").text("Made with love by ");
+                $(".projeto1-title").text("YE Gestão de Saúde");
+                $(".projeto3-title").text("o Semeador School");
+                $(".projeto4-title").text("RShira's Portfolio");
+                $(".projeto5-title").text("Taynah Saito's Portfolio");
     
                 portuguese = true;
             }
@@ -382,6 +491,23 @@ var logo_dark = 'images/ShiraLogo - Home_Dark2.png';
 var logo_light = 'images/ShiraLogo - Home.png';
 var arrows_dark = 'images/Group 1 1.png';
 var arrows_light = 'images/Group 1.png';
+var flutter_light = 'images/Flutter_logo.svg.png';
+var flutter_dark = 'images/Flutter_logo.svg-d.png';
+var dart_light = 'images/Dart-logo.png';
+var dart_dark = 'images/Dart-logo-d.png';
+var firebase_light = 'images/firebase_logo_icon_171157.png';
+var firebase_dark = 'images/firebase_logo_icon_171157-d.png';
+var html_light = 'images/HTML-logo 2.png';
+var html_dark = 'images/HTML-logo 2-d.png';
+var css_light = 'images/CSS-logo-3 2.png';
+var css_dark = 'images/CSS-logo-3 2-d.png';
+var js_light = 'images/Javascript_badge-c 1.png';
+var js_dark = 'images/Javascript_badge-c 1-d.png';
+var bootstrap_light = 'images/Bootstrap_logo-c 1.png';
+var bootstrap_dark = 'images/Bootstrap_logo-c 1-d.png';
+var figma_light = 'images/1667px-Figma-logo-c.png';
+var figma_dark = 'images/1667px-Figma-logo-c-d.png';
+
 
 function trocar(){
     document.querySelector('.logo-3d').src = logo_dark;
@@ -394,6 +520,63 @@ function trocar(){
     arrows_dark = arrows_light;
     arrows_light = aux2;
 
+
+    document.querySelectorAll('.flutter').forEach(function(element) {
+        element.src = flutter_dark;
+    });
+    let aux8 = flutter_dark;
+    flutter_dark = flutter_light;
+    flutter_light = aux8;
+
+    document.querySelectorAll('.firebase').forEach(function(element) {
+        element.src = firebase_dark;
+    });
+    let aux9 = firebase_dark;
+    firebase_dark = firebase_light;
+    firebase_light = aux9;
+
+    document.querySelectorAll('.dart').forEach(function(element) {
+        element.src = dart_dark;
+    });
+    let aux10 = dart_dark;
+    dart_dark = dart_light;
+    dart_light = aux10;
+
+    document.querySelectorAll('.html').forEach(function(element) {
+        element.src = html_dark;
+    });
+    let aux11 = html_dark;
+    html_dark = html_light;
+    html_light = aux11;
+
+    document.querySelectorAll('.css').forEach(function(element) {
+        element.src = css_dark;
+    });
+    let aux12 = css_dark;
+    css_dark = css_light;
+    css_light = aux12;
+
+    document.querySelectorAll('.js').forEach(function(element) {
+        element.src = js_dark;
+    });
+    let aux13 = js_dark;
+    js_dark = js_light;
+    js_light = aux13;
+
+    document.querySelectorAll('.figma').forEach(function(element) {
+        element.src = figma_dark;
+    });
+    let aux14 = figma_dark;
+    figma_dark = figma_light;
+    figma_light = aux14;
+
+    document.querySelectorAll('.bootstrap').forEach(function(element) {
+        element.src = bootstrap_dark;
+    });
+    let aux15 = bootstrap_dark;
+    bootstrap_dark = bootstrap_light;
+    bootstrap_light = aux15;
+
 };
 
 
@@ -402,7 +585,7 @@ function getDistanceFromTheTop(element) {
     
     if (!id) {
         console.error(`Href attribute is missing or empty on element: ${element}`);
-        return 0; // Retorna 0 se o href não estiver definido
+        return 0;
     }
 
     const targetElement = document.querySelector(id);
@@ -411,7 +594,7 @@ function getDistanceFromTheTop(element) {
         return targetElement.offsetTop;
     } else {
         console.error(`Element not found: ${id}`);
-        return 0; // Retorna 0 se o elemento não for encontrado
+        return 0;
     }
 }
 
@@ -439,38 +622,32 @@ menuLinks.forEach(link => {
 
 
 document.getElementById('emailButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Evita que o formulário seja enviado via HTTP (comportamento padrão do botão)
+    event.preventDefault();
 
-    // Captura os valores dos campos de entrada
     const name = document.getElementById('nameInput').value.trim();
     const email = document.getElementById('emailInput').value.trim();
     const message = document.getElementById('messageInput').value.trim();
 
-    // Verifica se todos os campos foram preenchidos
-        // Configuração para enviar e-mail usando serviço externo (neste caso, ElasticEmail)
         Email.send({
             Host: "smtp.elasticemail.com",
-            Username: "rodrigoshiraquadros@gmail.com", // Substitua pelo seu e-mail
-            Password: "7AF9FA675C2F8892A10A1625C549AC644E15", // Substitua pela sua senha
-            To: "rodrigoshiraquadros@gmail.com", // Substitua pelo e-mail de destino
-            From: "rodrigoshiraquadros@gmail.com", // Substitua pelo seu e-mail
+            Username: "rodrigoshiraquadros@gmail.com", 
+            Password: "7AF9FA675C2F8892A10A1625C549AC644E15", 
+            To: "rodrigoshiraquadros@gmail.com",
+            From: "rodrigoshiraquadros@gmail.com", 
             Subject: `${name}`,
             Body: `Email: ${email} \n\n\n ${message}`
         }).then(
             message => {
                 message => alert(message)
                 
-                // Exibe um alerta informando que o e-mail foi enviado com sucesso
                 alert('Mensagem enviada com sucesso!');
 
-                // Limpa os campos do formulário após o envio bem-sucedido
                 document.getElementById('nameInput').value = '';
                 document.getElementById('emailInput').value = '';
                 document.getElementById('messageInput').value = '';
                 location.reload();
             }
         ).catch(error => {
-            // Em caso de erro no envio do e-mail, exibe um alerta com a mensagem de erro
             console.error('Erro ao enviar e-mail:', error);
             alert('Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.');
         });
@@ -479,53 +656,47 @@ document.getElementById('emailButton').addEventListener('click', function(event)
 
 
 
-const myObserver = new IntersectionObserver((entries) => {
+const myObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show')
-        } else {
-            entry.target.classList.remove('show')
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
         }
-    })
-})
-
-const elements = document.querySelectorAll('.hidden')
-
-elements.forEach((element) => myObserver.observe(element))
-
-
-
-const myObserver2 = new IntersectionObserver((entries2) => {
-    entries2.forEach((entry2) => {
-        if(entry2.isIntersecting){
-            entry2.target.classList.add('show2')
-        } else {
-            entry2.target.classList.remove('show2')
-        }
-    })
-})
-
-const elements2 = document.querySelectorAll('.hidden2')
-
-elements2.forEach((element2) => myObserver2.observe(element2))
-
-
-
-const myObserver3 = new IntersectionObserver(entries3 => {
-    entries3.forEach((entry3, index) => {
-      if (entry3.isIntersecting) {
-        entry3.target.classList.add('show3', `delay-${index + 1}`);
-      } else {
-        entry3.target.classList.remove('show3', `delay-${index + 1}`);
-      }
     });
-  }, { threshold: 0.5 }); // Define um threshold de 0.5 para melhorar a detecção de interseção
-  
-  const elements3 = document.querySelectorAll('.hidden3');
-  
-  elements3.forEach((element3, index) => {
+});
+
+const elements = document.querySelectorAll('.hidden');
+
+elements.forEach((element) => myObserver.observe(element));
+
+const myObserver2 = new IntersectionObserver((entries2, observer2) => {
+    entries2.forEach((entry2) => {
+        if (entry2.isIntersecting) {
+            entry2.target.classList.add('show2');
+            observer2.unobserve(entry2.target);
+        }
+    });
+});
+
+const elements2 = document.querySelectorAll('.hidden2');
+
+elements2.forEach((element2) => myObserver2.observe(element2));
+
+const myObserver3 = new IntersectionObserver((entries3, observer3) => {
+    entries3.forEach((entry3, index) => {
+        if (entry3.isIntersecting) {
+            entry3.target.classList.add('show3', `delay-${index + 1}`);
+            observer3.unobserve(entry3.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const elements3 = document.querySelectorAll('.hidden3');
+
+elements3.forEach((element3, index) => {
     myObserver3.observe(element3);
 });
+
 
 document.querySelector('.main-logo').addEventListener('mousemove', function(e) {
     const container = document.querySelector('.logo-container');
@@ -549,10 +720,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Atualiza o texto do botão quando a página é carregada
     updateButtonText();
 
-    // Atualiza o texto do botão quando a janela é redimensionada
     window.addEventListener("resize", updateButtonText);
 });
 
@@ -570,17 +739,15 @@ function menuShow() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const myObserver4 = new IntersectionObserver(entries4 => {
+    const myObserver4 = new IntersectionObserver((entries4, observer4) => {
         entries4.forEach((entry4) => {
             if (entry4.isIntersecting) {
                 console.log('Elemento visível:', entry4.target);
                 entry4.target.classList.add('show4');
-            } else {
-                console.log('Elemento não visível:', entry4.target);
-                entry4.target.classList.remove('show4');
+                observer4.unobserve(entry4.target);
             }
         });
-    }, { threshold: 0.5 }); // Define um threshold de 0.5 para melhorar a detecção de interseção
+    }, { threshold: 0.5 });
     
     const elements4 = document.querySelectorAll('.hidden4');
     
@@ -592,53 +759,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const myObserver5 = new IntersectionObserver(entries5 => {
-//         entries5.forEach((entry5) => {
-//             if (entry5.isIntersecting) {
-//                 console.log('Elemento visível:', entry5.target);
-//                 entry5.target.classList.add('show5');
-//             } else {
-//                 console.log('Elemento não visível:', entry5.target);
-//                 entry5.target.classList.remove('show5');
-//             }
-//         });
-//     }, { threshold: 0.5 }); // Define um threshold de 0.5 para melhorar a detecção de interseção
-    
-//     const elements5 = document.querySelectorAll('.hidden5');
-    
-//     elements5.forEach((element5) => {
-//         console.log('Observando elemento:', element5);
-//         myObserver5.observe(element5);
-//     });
-// });
-
-const myObserver5 = new IntersectionObserver((entries5) => {
-    entries5.forEach((entry5) => {
-        if(entry5.isIntersecting){
-            entry5.target.classList.add('show5')
-        } else {
-            entry5.target.classList.remove('show5')
-        }
-    })
-})
-
-const elements5 = document.querySelectorAll('.hidden5')
-
-elements5.forEach((element5) => myObserver5.observe(element5));
-
-
-
-const myObserver6 = new IntersectionObserver((entries6) => {
+const myObserver6 = new IntersectionObserver((entries6, observer6) => {
     entries6.forEach((entry6) => {
         if(entry6.isIntersecting){
-            entry6.target.classList.add('show6')
-        } else {
-            entry6.target.classList.remove('show6')
+            entry6.target.classList.add('show6');
+            observer6.unobserve(entry6.target);
         }
-    })
-})
+    });
+});
 
-const elements6 = document.querySelectorAll('.hidden6')
+const elements6 = document.querySelectorAll('.hidden6');
 
-elements6.forEach((element6) => myObserver6.observe(element6))
+elements6.forEach((element6) => myObserver6.observe(element6));

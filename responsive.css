@@ -1,13 +1,29 @@
 @media screen and (max-width: 1500px){
-    .about-me-text{
-        flex-direction: column;
-    }
 
     .about-me-text img{
         border-radius: 21px;
     }
 
+    .foto{
+        margin-inline: auto;
+        width: 40vw;
+    }
+    
+    .about-me{
+        margin-inline: 50px;
+    }
+
 }
+
+@media screen and (max-width: 1350px){
+
+    .foto{
+        margin-inline: auto;
+        width: 30vw;
+    }
+
+}
+
 
 @media screen and (max-width: 1200px){
     .logo-3d{
@@ -163,13 +179,30 @@
         display: none;
     }
      
-    
+    .foto{
+        display: flex;
+        justify-content: center;
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .foto{
+        display: flex;
+        justify-content: center;
+        width: 70vw;
+    }
+
+    .about-me-text{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 950px) {
     .nav-bar {
         padding: 1.5rem 4rem;
     }
+
 
     .nav-item {
         display: none;
@@ -471,5 +504,11 @@
     #contact{
         background-position: bottom;
       }
+
+      .foto{
+        margin-inline: auto;
+        width: 70vw;
+    }
+
       
 }

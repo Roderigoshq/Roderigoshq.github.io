@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rodrigo Shira - Front-End Developer & UX/UI Designer</title>
+    <title>Rodrigo Shira - Fullstack Developer & UX/UI Designer</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,9 +70,9 @@
         </div>
         <main>
             <div class="title">
-                <h4 class="gradient">Desenvolvedor Front-End e Designer de UX/UI</h4>
+                <h4 class="gradient">Desenvolvedor Fullstack e Designer de UX/UI</h4>
                 <h1>Rodrigo Shiraishi</h1>
-                <h5>Sou um estudante de programação com foco em desenvolvimento Web e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades</h5>
+                <h5>Sou um estudante de programação com foco em desenvolvimento Fullstack e pretendo ampliar meus conhecimentos a fim de aprimorar minhas habilidades</h5>
                 <div class="socialmedia">
                     <a href="https://github.com/Roderigoshq">
                         <img src="/images/GitHubIcon2.png" width="20" alt="github">
@@ -82,7 +82,7 @@
                     </a>
                 </div>
                 <div class="main-buttons">
-                    <a href="/files/curriculo_rodrigo_shira.pdf" download="curriculo">
+                    <a href="/files/curriculo_rodrigo_shira_ofc2.pdf" download="curriculo">
                         <button id="downloadButton" class="big-button-cv cv">Download CV</button>
                     </a>
                     <a href="#contact"><button class="big-button-principal contact-button">Contate-me</button></a>
@@ -107,7 +107,7 @@
                     Em 2023, decidi entrar para o mundo de programação, estudando no <strong>Instituto Mauá de Tecnologia</strong>, porém comecei bem perdido em relação á área em que eu iria atuar. Para ser bem sincero, não sabia nada de programação, então decidi me informar e esperar até que eu encontrasse uma área em que eu realmente gostasse. 
                     <br>
                     <br>
-                    Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para <strong>aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Front-End.</strong></p>
+                    Após 1 semestre, comecei a estudar <strong>CSS</strong> e <strong>HTML</strong>, meu primeiro contato com o <strong>Front-End</strong> e inclusive trabalhei para a estruturação de um projeto para uma <strong>Instituição de doações</strong>, e aí que eu simplesmente me apaixonei no Front-End. Devido á isso, comecei a praticar mais e mais para me qualificar á um emprego, e atualmente estou constantemente estudando para <strong>aprimorar meus aprendizados</strong> e <strong>iniciar minha carreira como desenvolvedor Fullstack.</strong></p>
             </div>
         </div>
     </section>
@@ -117,23 +117,135 @@
                 <h2 class="text1 hidden">Um pouco do meu</h2>
                 <h2 class="text2 hidden">Portfólio</h2>
             </div>
-            <div class="filter hidden5">
+            <div class="filter">
                 <div class="dropdown">
                     <div class="select">
                         <span class="selected">Todos</span>
-                        <div class="caret"></div>
+                        <span class="caret"></span>
                     </div>
                     <ul class="menu">
-                        <li class="active">Todos</li>
-                        <li>Portfólio</li>
-                        <li>Website Institucional</li>
-                        <li>Landing Page</li>
+                        <li data-filter="todos" class="active">Todos</li>
+                        <li data-filter="apps">Apps</li>
+                        <li data-filter="landing-page">Landing Page</li>
+                        <li data-filter="website-institucional">Website Institucional</li>
+                        <li data-filter="portfolios">Portfólios</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="portfolio-cards">
-            <div class="cards first hidden3">
+            <div class="cards apps first ">
+                <div class="card-image">
+                    <img class="portfolio1" src="images/foto-portfolio-1.png" alt="foto">
+                    <div class="overlay">
+                        <span class="overlay-text projeto1">Um aplicativo de gestão de saúde
+                            que permite que você acompanhe sua saúde de maneira
+                            completa, mantendo todas as informações importantes
+                            ao seu alcance e com uma funcionalidade 
+                            de escanear seus exames.</span>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <h1 class="projeto1-title">YE Gestão de Saúde</h1>
+                    <div class="technologies">
+                        <img src="/images/Flutter_logo.svg.png" class="technology flutter" alt="flutter">
+                        <img src="/images/Dart-logo.png" class="technology dart" alt="dart">
+                        <img src="/images/firebase_logo_icon_171157.png" class="technology firebase" alt="firebase">
+                        <img src="images/1667px-Figma-logo-c.png" class="technology figma" alt="figma">
+                    </div>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="https://github.com/Roderigoshq/Software_YE_Gestao_De_Saude_PII">&#60; repositório /&#62;</a>
+                    <a href="https://www.behance.net/gallery/202360367/YE-Gestao-de-Saude"><button class="big-button-principal">Aplicação</button></a>
+                </div>
+            </div>
+            <div class="cards landing-page second hidden3">
+                <div class="card-image">
+                    <img class="portfolio2" src="images/foto-portfolio-2.png" alt="foto">
+                    <div class="overlay">
+                        <span class="overlay-text projeto2">Site feito para consultar o tempo, a umidade e a 
+                            temperatura e um país, estado ou cidade feito através 
+                            de uma conexão com uma API.</span>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <h1 class="projeto2-title">Shira Climates</h1>
+                    <div class="technologies">
+                        <img src="/images/HTML-logo 2.png" class="technology html" alt="html">
+                        <img src="/images/CSS-logo-3 2.png" class="technology css" alt="css">
+                        <img src="/images/Javascript_badge-c 1.png" class="technology js" alt="javascript">
+                    </div>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="https://github.com/Roderigoshq/Shira_Climates_Consulta_Do_Clima">&#60; repositório /&#62;</a>
+                    <a href="https://shiraclimates.netlify.app/"><button class="big-button-principal">Aplicação</button></a>
+                </div>
+            </div>
+            <div class="cards website-institucional third hidden3">
+                <div class="card-image">
+                    <img class="portfolio3" src="images/foto-portfolio-3.png" alt="foto">
+                    <div class="overlay">
+                        <span class="overlay-text projeto3">Site Institucional desenvolvido para uma instituição beneficiente.
+                            </span>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <h1 class="projeto3-title">Escola o Semeador</h1>
+                    <div class="technologies">
+                        <img src="/images/HTML-logo 2.png" class="technology html" alt="html">
+                        <img src="/images/CSS-logo-3 2.png" class="technology css" alt="css">
+                        <img src="/images/Javascript_badge-c 1.png" class="technology js" alt="javascript">
+                        <img src="images/Bootstrap_logo-c 1.png" class="technology bootstrap" alt="bootstrap">
+                        <img src="images/1667px-Figma-logo-c.png" class="technology figma" alt="figma">
+                    </div>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="https://github.com/Roderigoshq/oSemeador_Institucional_Site">&#60; repositório /&#62;</a>
+                    <a href="https://escolaosemeador.netlify.app/"><button class="big-button-principal">Aplicação</button></a>
+                </div>
+            </div>
+            <div class="cards portfolios fourty hidden3">
+                <div class="card-image">
+                    <img class="portfolio4" src="images/foto-portfolio-4.png" alt="foto">
+                    <div class="overlay">
+                        <span class="overlay-text projeto4">Meu Portfolio pessoal desenvolvido para mostrar um 
+                            pouco mais de mim, dos meus projetos e dos meus 
+                            conhecimentos.</span>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <h1 class="projeto4-title">Portfólio RShira</h1>
+                    <div class="technologies">
+                        <img src="/images/HTML-logo 2.png" class="technology html" alt="html">
+                        <img src="/images/CSS-logo-3 2.png" class="technology css" alt="css">
+                        <img src="/images/Javascript_badge-c 1.png" class="technology js" alt="javascript">
+                        <img src="images/1667px-Figma-logo-c.png" class="technology figma" alt="figma">
+                    </div>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="https://github.com/Roderigoshq/Roderigoshq.github.io">&#60; repositório /&#62;</a>
+                    <a href="https://roderigoshq.github.io/"><button class="big-button-principal">Aplicação</button></a>
+                </div>
+            </div>
+            <div class="cards portfolios fifty hidden3">
+                <div class="card-image">
+                    <img class="portfolio5" src="images/foto-portfolio-5.png" alt="foto">
+                    <div class="overlay">
+                        <span class="overlay-text projeto5">Design de um portfolio feito para a Taynah Saito.</span>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <h1 class="projeto5-title">Portfólio Taynah Saito</h1>
+                    <div class="technologies">
+                        <img src="images/1667px-Figma-logo-c.png" class="technology figma" alt="figma">
+                    </div>
+                </div>
+                <div class="interactions">
+                    <a class="repository" href="https://github.com/taynahsaito/portfolio">&#60; repositório /&#62;</a>
+                    <a href="https://www.figma.com/design/pIlGFZSCo9XOE2PsbIbdCT/portfolio?node-id=0-1&t=vIqtwaT2jwcu9TAe-1"><button class="big-button-principal">Aplicação</button></a>
+                </div>
+            </div>
+            <!-- <div class="cards sixty hidden3">
                 <img src="images/ProjectSemeador2 1.png" alt="foto">
                 <div class="card-header">
                     <h1>Empty</h1>
@@ -143,62 +255,7 @@
                     <a class="repository" href="#">&#60; repositório /&#62;</a>
                     <a href="#"><button class="big-button-principal">Aplicação</button></a>
                 </div>
-            </div>
-            <div class="cards second hidden3">
-                <img src="images/ProjectSemeador2 1.png" alt="foto">
-                <div class="card-header">
-                    <h1>Empty</h1>
-                    <h3>Description</h3>
-                </div>
-                <div class="interactions">
-                    <a class="repository" href="#">&#60; repositório /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
-                </div>
-            </div>
-            <div class="cards third hidden3">
-                <img src="images/ProjectSemeador2 1.png" alt="foto">
-                <div class="card-header">
-                    <h1>Empty</h1>
-                    <h3>Description</h3>
-                </div>
-                <div class="interactions">
-                    <a class="repository" href="#">&#60; repositório /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
-                </div>
-            </div>
-            <div class="cards fourty hidden3">
-                <img src="images/ProjectSemeador2 1.png" alt="foto">
-                <div class="card-header">
-                    <h1>Empty</h1>
-                    <h3>Description</h3>
-                </div>
-                <div class="interactions">
-                    <a class="repository" href="#">&#60; repositório /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
-                </div>
-            </div>
-            <div class="cards fifty hidden3">
-                <img src="images/ProjectSemeador2 1.png" alt="foto">
-                <div class="card-header">
-                    <h1>Empty</h1>
-                    <h3>Description</h3>
-                </div>
-                <div class="interactions">
-                    <a class="repository" href="#">&#60; repositório /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
-                </div>
-            </div>
-            <div class="cards sixty hidden3">
-                <img src="images/ProjectSemeador2 1.png" alt="foto">
-                <div class="card-header">
-                    <h1>Empty</h1>
-                    <h3>Description</h3>
-                </div>
-                <div class="interactions">
-                    <a class="repository" href="#">&#60; repositório /&#62;</a>
-                    <a href="#"><button class="big-button-principal">Aplicação</button></a>
-                </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <section id="skills">
@@ -211,62 +268,62 @@
             <div class="tools">
                 <h1 class="hidden">Habilidades</h1>
                 <div class="tools-container">
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/HTML-logo 2.png" alt="logo-HTML">
                     <img class="dark-icons tool-icon" src="/images/HTML-logo 2-d.png" alt="logo-HTML">
                     <p>HTML5</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/CSS-logo-3 2.png" alt="logo-CSS">
                     <img class="dark-icons tool-icon" src="/images/CSS-logo-3 2-d.png" alt="logo-CSS">
                     <p>CSS</p>
                     </div>
-                    <div class="tool hidden3">
-                    <img class="light-icons tool-icon" src="/images/800px-Sass_Logo_Color 1.png" alt="logo-SASS">
-                    <img class="dark-icons tool-icon" src="/images/800px-Sass_Logo_Color 1-d.png" alt="logo-SASS">
-                    <p>Sass</p>
+                    <div class="tool hidden4">
+                    <img class="light-icons tool-icon" src="/images/Flutter_logo.svg.png" width="65" alt="logo-Flutter">
+                    <img class="dark-icons tool-icon" src="/images/Flutter_logo.svg-d.png" alt="logo-Flutter">
+                    <p>Flutter</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/Bootstrap_logo-c 1.png" alt="logo-Bootstrap">
                     <img class="dark-icons tool-icon" src="/images/Bootstrap_logo-c 1-d.png" alt="logo-Bootstrap">
                     <p>Bootstrap</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/Javascript_badge-c 1.png" alt="logo-JavaScript">
                     <img class="dark-icons tool-icon" src="/images/Javascript_badge-c 1-d.png" alt="logo-JavaScript">
                     <p>JavaScript</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/c.png" alt="logo-c">
                     <img class="dark-icons tool-icon" src="/images/c-d.png" alt="logo-c">
                     <p>C</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/MySQL_textlogo 1.png" alt="logo-MySQL">
                     <img class="dark-icons tool-icon" src="/images/MySQL_textlogo 1-d.png" alt="logo-MySQL">
                     <p>MySQL</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/Git-Icon-1788C-c 1.png" alt="logo-Git">
                     <img class="dark-icons tool-icon" src="/images/Git-Icon-1788C-c 1-d.png" alt="logo-Git">
                     <p>Git</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/Python-logo-notext 1.png" alt="logo-Python">
                     <img class="dark-icons tool-icon" src="/images/Python-logo-notext 1-d.png" alt="logo-Python">
                     <p>Python</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/WordPress_blue_logo-c.png" alt="logo-Wordpress">
                     <img class="dark-icons tool-icon" src="/images/WordPress_blue_logo-c-d.png" alt="logo-Wordpress">
                     <p>Wordpress</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/1667px-Figma-logo-c.png" alt="logo-Figma">
                     <img class="dark-icons tool-icon" src="/images/1667px-Figma-logo-c-d.png" alt="logo-Figma">
                     <p>Figma</p>
                     </div>
-                    <div class="tool hidden3">
+                    <div class="tool hidden4">
                     <img class="light-icons tool-icon" src="/images/Adobe_Photoshop_CC_icon-c.png" alt="logo-Photoshop">
                     <img class="dark-icons tool-icon" src="/images/Adobe_Photoshop_CC_icon-c-d.png" alt="logo-Photoshop">
                     <p>Photoshop</p>
@@ -279,27 +336,27 @@
         <div class="contact">
                 <div class="announcement">
                     <img class="bate-papo-icon hidden4" src="images/96351e29-ba09-4245-9606-ff8eb2a4d90b 1.png" alt="bate-papo-icon">
-                    <h3 class="announcement-text hidden4">Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?</h3>
-                    <h2 class="announcement-text-2 hidden4">Entre em contato já!</h2> 
-                    <img class="arrows hidden4" src="images/Group 1.png" alt="setas">
+                    <h3 class="announcement-text hidden2">Deseja me contratar para algum <strong>serviço?</strong> Talvez fazer uma <strong>proposta</strong> ou até mandar um feedback?</h3>
+                    <h2 class="announcement-text-2 hidden2">Entre em contato já!</h2> 
+                    <img class="arrows hidden2" src="images/Group 1.png" alt="setas">
                 </div>
                 <div class="form-contact">
-                    <h1 class="form-title hidden5">
+                    <h1 class="form-title hidden4">
                         <span>F o r m u l á r i o</span>
                         <span>d e</span>
                     </h1>
-                    <h1 class="form-title-2 hidden5">CONTATO</h1>
-                    <h2 class="form-description hidden5">&#60 Preencha os dados abaixo e logo você será respondido ; &#41; /&#62</h2>
-                    <div class="entryarea hidden5">
+                    <h1 class="form-title-2 hidden4">CONTATO</h1>
+                    <h2 class="form-description hidden4">&#60 Preencha os dados abaixo e logo você será respondido ; &#41; /&#62</h2>
+                    <div class="entryarea hidden4">
                         <input class="input" type="text" id="nameInput">
                         <label for="nameInput" class="labelline nameLabel">nome</label>
                     </div>
                     
-                    <div class="entryarea hidden5">
-                        <input class="input" type="text" id="emailInput">
+                    <div class="entryarea hidden4">
+                        <input class="input hidden4" type="text" id="emailInput">
                         <label for="emailInput" class="labelline">email</label>
                     </div>
-                    <div class="entryarea hidden5">
+                    <div class="entryarea hidden4">
                         <div class="entryarea">
                             <textarea id="messageInput" class="inputMessage" placeholder="Digite sua mensagem..." rows="1"></textarea>
                         </div>                    
@@ -309,7 +366,7 @@
             </div>
     </section>
     <footer>
-        <h5>&#60; Feito com carinho por </h5>
+        <h5 class="footer">&#60; Feito com carinho por </h5>
     </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="main.js"></script>
