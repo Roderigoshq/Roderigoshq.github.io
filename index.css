@@ -7,6 +7,10 @@
     font-family: 'Poppins';
 }
 
+body{
+  overflow-x: hidden;
+}
+
 :root {
     --backgroundHeaderColor: #0f0911;
     --backgroundColor: #120a14;

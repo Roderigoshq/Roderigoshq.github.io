@@ -252,7 +252,8 @@
     }
 
     .logo {
-    padding-left: 115px;
+        position: absolute;
+        right: 0px;
     }
 
     main{
